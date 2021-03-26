@@ -1,7 +1,15 @@
 package com.application.frq.Nathan;
 
+import org.thymeleaf.util.ArrayUtils;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
+interface Timer{
+    void wrap();
+}
 
 public class Recursion {
 
@@ -27,7 +35,6 @@ public class Recursion {
         int i1 = 0;
         int i2 = 0;
 
-        //{1,2}, new int[]{5,6}
 
         while (i1<arr1.length && i2<arr2.length){
             if(arr1[i1] < arr2[i2]){
@@ -64,10 +71,58 @@ public class Recursion {
         return new int[][]{arr1, arr2};
     }
 
+
+    public static Long logTime(Timer timer){
+        long start = System.nanoTime();
+        timer.wrap();
+        return System.nanoTime()-start;
+    }
+
+    static int CEIL = 5000;
+    public static ArrayList<Long> sortMany(int n){
+        Random rand = new Random();
+        int[] arr = new int[0];
+        ArrayList<Long> times = new ArrayList<Long>();
+
+        for(int i =1; i<=n;i++){
+            arr = Arrays.copyOf(arr, arr.length+1);
+            arr[arr.length-1] = rand.nextInt(CEIL);
+
+            int[] unsorted = arr;
+            long time = Recursion.logTime(new Timer() {
+                @Override
+                public void wrap() {
+                    int[] sorted = Recursion.mergeSort(unsorted);
+                    //System.out.println(Arrays.toString(unsorted) + " => " + Arrays.toString(sorted));
+                }
+            });
+            times.add(time);
+        }
+
+        return times;
+    }
+
+    public static String[] getExampleSort(int length){
+        Random rand = new Random();
+        int[] arr = new int[length];
+        for(int i=0;i<length;i++){
+            arr[i] = rand.nextInt(100);
+        }
+        int[] sorted = Recursion.mergeSort(arr);
+        return new String[]{
+                "unsorted: " + Arrays.toString(arr),
+                "sorted: " + Arrays.toString(sorted)
+        };
+    }
+
+
     public static void main(String[] args) {
        int[] vals = new int[]{5,2,8,23,6,7,123,-1,435,2,7,2,7,8,90};
 
-       System.out.println(Arrays.toString(Recursion.mergeSort(vals)));
+
+       Recursion.sortMany(10000);
+
+       //System.out.println(Arrays.toString(Recursion.mergeSort(vals)));
        //System.out.println(Arrays.toString(Recursion.merge(new int[]{1,5}, new int[]{2,6})));
 
        //System.out.println(Arrays.toString(Recursion.merge(vals, vals)));
