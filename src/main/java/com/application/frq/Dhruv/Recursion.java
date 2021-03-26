@@ -1,4 +1,4 @@
-package Dhruv;
+package com.application.frq.Dhruv;
 
 public class Recursion {
     public static void main(String[] args) {
