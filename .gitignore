@@ -34,3 +34,5 @@ build/
 
 ### Keys ###
 *.ppk
+*.key
+*.pem
