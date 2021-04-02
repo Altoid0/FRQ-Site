@@ -1,8 +1,8 @@
 # FRQ-Site
-Simple Spring Boot Site to serve AP CSA FRQs
+Simple Spring Boot Site to serve AP CSA FRQs. Website [Here](http://frq.sylicia.com/) 
 
 ## Links
-- [Nathaniel C](http://localhost:8080/nathan/)
+- [Nathaniel C](http://frq.sylicia.com/nathan)
 
 ## Deployment
 1. Configure maven runner to delegate IDE/Build actions
