@@ -17,12 +17,16 @@ public class EyaadController {
         }
 
         @GetMapping("/recursion")
-        public String recursion(@RequestParam(value ="num", required = false) Integer num, Model model) {
+        public String recursion(@RequestParam(value ="num", required = false) Integer num, @RequestParam(value = "decimal", required = false) Integer decimal, Model model) {
             Recursion recursion = new Recursion();
             if (num == null) {
                 num = 1;
             }
+            if (decimal == null) {
+                decimal = 255;
+            }
             model.addAttribute("numb", recursion.returnFact(num));
+            model.addAttribute("bin", recursion.returnBinary(decimal));
             return "Eyaad/recursion.html";
         }
 

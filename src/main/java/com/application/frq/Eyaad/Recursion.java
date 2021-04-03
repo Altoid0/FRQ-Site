@@ -34,6 +34,10 @@ public class Recursion {
         return n % 2 + 10 * decimalToBinary(n/2);
     }
 
+    public String returnBinary(int n) {
+        return n + " in binary is " + decimalToBinary(n);
+    }
+
     //Adds up all the digits in the input together
     public int digitSum(int n) {
         if (n / 10 == 0) {
