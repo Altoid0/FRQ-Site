@@ -5,6 +5,7 @@ public class Recursion {
     //main function
     public static void main(String[] args) {
         Recursion runner = new Recursion();
+        System.out.println(runner.returnFact(5));
         System.out.println(runner.fact(5));
         System.out.println(runner.gcf(24,9));
         System.out.println(runner.decimalToBinary(7));
@@ -14,6 +15,8 @@ public class Recursion {
 
     //Factorial recursion
     public int fact(int n) { return n>0 ? n*fact(n-1) : 1; }
+
+    public String returnFact(int n) { return n + "! is equal to " + fact(n); }
 
     //Greatest Common Factor with recursion
     public int gcf(int a, int b) {
