@@ -17,8 +17,8 @@ public class AnthonyController {
     }
 
     @GetMapping("/recursion")
-    public String recursion(@RequestParam(value = "facInt") Integer facInt, 
-                            @RequestParam(value = "frogInt") Integer frogInt, Model model){
+    public String recursion(@RequestParam(value = "facInt", required = false) Integer facInt,
+                            @RequestParam(value = "frogInt", required = false) Integer frogInt, Model model){
         Recursion r = new Recursion();
         if (facInt == null) {
             facInt = 0;

@@ -22,6 +22,6 @@ public class Recursion {
 
     public String returnFrog (int steps) {
         int result = frogsProblem(steps);
-        return "With " + steps + " number of steps, the frog has " + result + " paths that it can go on.";
+        return "With a total of " + steps + " steps, the frog has " + result + " paths that it can go on.";
     }
 }
