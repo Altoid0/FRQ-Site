@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion | Anthony</title>
+</head>
+
+<body>
+    <h1>Recursion</h1>
+    <p>A collection of labs involving recursion.</p>
+
+    <h2>Factorial</h2>
+    <form th:action="@{/anthony/recursion}">
+        <label>Simple factorial program. Enter a number and see what its factorial gives!</label>
+        <input type="number" min="1" max="100" th:name="num" th:value="${facInt}">
+        <input type="submit">
+    </form>
+    <p th:text="${factorial}"></p>
+
+    <h2>Frog Problem</h2>
+    <form th:action="@{/anthony/recursion}">
+        <label>A classic recursion problem involving a frog, some lilypads, and figuring out how many paths he can take across. See how many ways the frog can hop across the path if he can hop once or twice!</label>
+        <input type="number" min="1" max="100" th:name="num" th:value="${frogInt}">
+        <input type="submit">
+    </form>
+    <p th:text="${frogs}"></p>
+</body>
