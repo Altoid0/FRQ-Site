@@ -18,23 +18,19 @@ public class DhruvController {
     }
 
     @GetMapping("/recursion")
-    public String recursion(@RequestParam(value = "sum", required = false) int sum,
-                            @RequestParam(value = "curr", required = false) int curr,
-                            @RequestParam(value = "tail", required = false) int tail,
-                            @RequestParam(value = "pow", required = false) int pow,
-                            @RequestParam(value = "bin", required = false) int bin, Model model) {
+    public String recursion(@RequestParam(value = "sum", required = false) Integer sum, Model model) {
 
-        model.addAttribute("sum", Recursion.sum(sum));
-        model.addAttribute("tail", Recursion.tail(curr, tail));
-        model.addAttribute("pow", Recursion.power(pow));
-        model.addAttribute("bin", Recursion.toBinary(bin));
+        // Logic for summation factorial
+        Integer finsum;
+        if (sum == null) {
+            finsum = 0;
+        }
+        else {
+            finsum = com.application.frq.Dhruv.Recursion.sum(sum);
+        }
 
+        model.addAttribute("finsum", finsum);
         return "Dhruv/recursion.html";
     }
-
-//    @GetMapping("/recursion")
-//    public String recursion
-
-
 
 }
