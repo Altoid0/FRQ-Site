@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class TanayController {
 
-    @GetMapping("/")
+    @GetMapping("")
     public String index(){
         return "Tanay/index.html";
     }
