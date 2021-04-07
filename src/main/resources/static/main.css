@@ -1,7 +1,12 @@
 body {
-    background-color: #455a64;
+    background-color: #314657;
 }
 h1 {
+  color: white;
+  text-align: center;
+  font-family: verdana;
+}
+h2 {
   color: white;
   text-align: center;
   font-family: verdana;
