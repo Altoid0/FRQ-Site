@@ -69,5 +69,11 @@ public class NathanController {
         return "Nathan/insertion.html";
     }
 
+    @GetMapping("/inheritance")
+    public String inheritance(){
+        return "Nathan/inheritance.html";
+    }
+
+
 
 }
