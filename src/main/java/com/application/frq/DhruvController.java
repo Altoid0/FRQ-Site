@@ -18,19 +18,36 @@ public class DhruvController {
     }
 
     @GetMapping("/recursion")
-    public String recursion(@RequestParam(value = "sum", required = false) Integer sum, Model model) {
+    public String recursion(@RequestParam(value = "sum", required = false) Integer sum,
+                            @RequestParam(value = "bin", required = false) Integer bin, Model model) {
 
+        Recursion r = new Recursion();
         // Logic for summation factorial
         Integer finsum;
         if (sum == null) {
             finsum = 0;
         }
         else {
-            finsum = com.application.frq.Dhruv.Recursion.sum(sum);
+            finsum = r.sum(sum);
+        }
+
+        // Logic for Decimal to Binary
+        String finbin;
+        if (bin == null) {
+            finbin = "0";
+        }
+        else {
+            finbin = r.toBinary(bin);
         }
 
         model.addAttribute("finsum", finsum);
+        model.addAttribute("finbin", finbin);
         return "Dhruv/recursion.html";
+    }
+
+    @GetMapping("/inheritance")
+    public String inheritance() {
+        return "test";
     }
 
 }
