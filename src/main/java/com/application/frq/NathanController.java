@@ -1,5 +1,6 @@
 package com.application.frq;
 
+import com.application.frq.Nathan.Insertion;
 import com.application.frq.Nathan.Recursion;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,7 @@ public class NathanController {
         int l = (length == null || length<1 || length>100)?10:length.intValue();
         String[] exampleData = Recursion.getExampleSort(l);
 
+
         List<Long> iterationData = null;
         if(iterations != null){
             int i = iterations.intValue();
@@ -44,5 +46,15 @@ public class NathanController {
         model.addAttribute("sorted", exampleData[1]);
         return "Nathan/recursion.html";
     }
+
+    @GetMapping("/insertion")
+    public String insertion(Model model){
+
+        int[] vals = new int[]{5,2,8,9,23,1};
+        int[][] steps = Insertion.insertionSortWithSteps(vals);
+        model.addAttribute("steps", steps);
+        return "Nathan/insertion.html";
+    }
+
 
 }
