@@ -3,16 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Insertion | Nathan</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
 </head>
 <body>
 
     <h1>Insertion sort</h1>
     <p>This is a demonstration of insertion sort.</p>
 
+    <div style="width: 1000px;">
+        <canvas id="bar-chart"></canvas>
+    </div>
+
+    <div class="step-increment">
+        <button id="step-down">Back</button>
+        <button id="step-up">Next</button>
+    </div>
+
+    <form th:action="@{/nathan/insertion}">
+        <label for="length">Array length</label>
+        <input type="number" min="10" max="40" id="length" th:name="length" th:value="${length}">
+
+        <label for="length">Random Ceiling</label>
+        <input type="number" min="20" max="100" id="randomCeil" th:name="randomCeil" th:value="${randomCeil}">
+        <input type="submit">
+    </form>
+
 </body>
 
 <script th:inline="javascript">
     var list = /*[[${steps}]]*/ [];
+    console.log(list[0])
+
+    var step = 0;
+
+    const getRandColors = () => {
+        const colors = [];
+        for(var i=0;i<list[0].length;i++){
+            colors.push('#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0'));
+        }
+        return colors;
+    }
+
+    const getLabels = () => {
+        const labels = [];
+        for(var i=0;i<list[0].length;i++){
+            labels.push(""+i);
+        }
+        return labels;
+    }
+
+    var myBarChart = new Chart(document.getElementById("bar-chart"), {
+        type: 'bar',
+        data: {
+          labels: getLabels(),
+          datasets: [
+            {
+              backgroundColor: getRandColors(),
+              data: list[step]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Different values in array'
+          },
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+        }
+    });
+
+    document.getElementById("step-up").addEventListener("click", function(){
+        if(step<list.length-1){
+            console.log("up")
+            step += 1;
+            myBarChart.data.datasets[0].data = list[step];
+            myBarChart.update();
+        }
+
+    });
+
+    document.getElementById("step-down").addEventListener("click", function(){
+        if(step>0){
+            console.log("down")
+            step -= 1;
+            myBarChart.data.datasets[0].data = list[step];
+            myBarChart.update();
+        }
+    });
 
 </script>
 

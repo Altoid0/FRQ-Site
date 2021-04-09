@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Random;
 
 @RequestMapping("/nathan")
 @Controller
@@ -48,11 +49,23 @@ public class NathanController {
     }
 
     @GetMapping("/insertion")
-    public String insertion(Model model){
+    public String insertion(@RequestParam(value = "length", required = false) Integer length,
+                            @RequestParam(value = "randomCeil", required = false) Integer randomCeil, Model model){
 
-        int[] vals = new int[]{5,2,8,9,23,1};
-        int[][] steps = Insertion.insertionSortWithSteps(vals);
+        int l = (length == null || length<10 || length>40)?15:length.intValue();
+        int rc = (randomCeil == null || randomCeil<20 || randomCeil>100)?20:randomCeil.intValue();
+
+        Random rand = new Random();
+        int[] arr = new int[l];
+        for(int i=0;i<arr.length;i++){
+            arr[i] = rand.nextInt(rc)+1;
+        }
+        int[][] steps = Insertion.insertionSortWithSteps(arr);
+
         model.addAttribute("steps", steps);
+        model.addAttribute("length", l);
+        model.addAttribute("randomCeil", rc);
+
         return "Nathan/insertion.html";
     }
 
