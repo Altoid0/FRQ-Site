@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion | Eyaad</title>
+</head>
+<body>
+<div class="lab">
+    <h1>Recursion labs</h1>
+    <!-- <form id="factForm" action="/fac" method="GET">
+        <label for="num">This program will return the factorial of a number you put</label>
+        <input name="num" id="num" type="number" >
+        <button>Go!</button>
+    </form> -->
+    <h3>Factorial</h3>
+    <form th:action="@{/eyaad/recursion}">
+        <label>This program will return the factorial of a number you put</label>
+        <input type="number" min="1" max="100" th:name="num" th:value="${num}">
+        <input type="submit">
+    </form>
+    <p th:text="${numb}"></p>
+
+    <h3>Decimal to Binary</h3>
+    <form th:action="@{/eyaad/recursion}">
+        <label>This program will convert a decimal number to binary</label>
+        <input type="number" th:name="decimal" th:value="${decimal}">
+        <input type="submit">
+    </form>
+
+    <p th:text="${bin}"></p>
+
+</div>
+</body>
+</html>

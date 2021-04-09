@@ -32,6 +32,12 @@
 
     <canvas id="line-chart" width="100px"></canvas>
 
+
+    <div class="java-code">
+        <h1>Java Code</h1>
+        <script src="https://gist.github.com/nathanielCherian/4c24e2b70d7692672957681d6dc6bcda.js"></script>
+    </div>
+
     <script th:inline="javascript">
         var list = /*[[${iterationData}]]*/ [];
         console.log(list);
@@ -68,6 +74,17 @@
 
         #line-graph{
             width:50% !important;
+        }
+
+        .java-code{
+            width: 50% !important;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0%)
+        }
+
+        .java-code h1{
+            text-align: center;
         }
 
     </style>

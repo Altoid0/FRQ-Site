@@ -1,0 +1,24 @@
+body {
+    background-color: #314657;
+}
+h1 {
+  color: white;
+  text-align: center;
+  font-family: verdana;
+}
+h2 {
+  color: white;
+  font-family: verdana;
+}
+h3 {
+  color: white;
+  font-family: verdana;
+}
+p {
+  color: white;
+  font-family: verdana;
+  font-size: 20px;
+}
+.intro {
+  text-align: center;
+}

@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class NathanController {
 
-    @GetMapping("/")
+    @GetMapping("")
     public String index(){
         return "Nathan/index.html";
     }
