@@ -16,10 +16,18 @@
         <canvas id="bar-chart"></canvas>
     </div>
 
+
+    <h3>Use the buttons to increment or the slider to scrub through the steps of insertion sort</h3>
     <div class="step-increment">
-        <button id="step-down">Back</button>
-        <button id="step-up">Next</button>
+        <h3 id="step-text">Step: </h3>
+        <button id="step-down" class="btn">Back</button>
+        <button id="step-up" class="btn">Next</button>
+        <br>
+        <div class="sr-c">
+            <input type="range" min="1" th:max="${length}" value="1" id="step-slider" step="1">
+        </div>
     </div>
+
 
     <form th:action="@{/nathan/insertion}">
         <label for="length">Array length</label>
@@ -34,9 +42,15 @@
 
 <script th:inline="javascript">
     var list = /*[[${steps}]]*/ [];
-    console.log(list[0])
+
 
     var step = 0;
+
+    const setStepText = () => {
+        document.getElementById("step-text").innerHTML = `step: ${step+1} / ${list.length}`
+    }
+
+    setStepText();
 
     const getRandColors = () => {
         const colors = [];
@@ -49,7 +63,7 @@
     const getLabels = () => {
         const labels = [];
         for(var i=0;i<list[0].length;i++){
-            labels.push(""+i);
+            labels.push("");
         }
         return labels;
     }
@@ -81,12 +95,22 @@
         }
     });
 
+    const setStep = (val) => {
+        step = val;
+        myBarChart.data.datasets[0].data = list[step];
+        myBarChart.update();
+        setStepText();
+    }
+
     document.getElementById("step-up").addEventListener("click", function(){
         if(step<list.length-1){
             console.log("up")
+            setStep(step+1);
+            /*
             step += 1;
             myBarChart.data.datasets[0].data = list[step];
             myBarChart.update();
+            setStepText();*/
         }
 
     });
@@ -94,12 +118,38 @@
     document.getElementById("step-down").addEventListener("click", function(){
         if(step>0){
             console.log("down")
+            setStep(step-1);
+            /*
             step -= 1;
             myBarChart.data.datasets[0].data = list[step];
             myBarChart.update();
+            setStepText();*/
         }
     });
 
+
+    document.getElementById('step-slider').max = list.length;
+    document.getElementById('step-slider').addEventListener('input', function () {
+        const val = parseInt(this.value);
+        setStep(val-1);
+    }, false);
+
 </script>
+
+<style>
+    .btn{
+        padding:1%;
+        font-size: 2rem;
+    }
+
+    .sr-c{
+        padding: 1%;
+    }
+
+    #step-slider{
+        width: 300px;
+    }
+</style>
+
 
 </html>
