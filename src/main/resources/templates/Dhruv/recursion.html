@@ -22,8 +22,19 @@
     <p th:text="${finsum}"></p>
 
 
+    <h2>Binary Recursion</h2>
+    <p>A simple use of recursion to convert a decimal number to binary</p>
+    <form th:action="@{/dhruv/recursion}">
+        <label>Decimal Number Value</label>
+        <input type="number" min="1" max="100" th:name="bin" th:value="${bin}">
+        <input type="submit">
+    </form>
+    <p th:text="${finbin}"></p>
 
-<!--    <h2>Tail Recursion</h2>-->
+
+
+
+    <!--    <h2>Tail Recursion</h2>-->
 <!--    <form th:action="@{/dhruv/recursion}">-->
 <!--        <label>Tail Value</label>-->
 <!--        <input type="number" min="1" max="100" th:name="corr" th:value="${tail}">-->
@@ -41,14 +52,6 @@
 <!--    </form>-->
 <!--    <p th:text="${finpow}"></p>-->
 
-
-<!--    <h2>Binary Recursion</h2>-->
-<!--    <form th:action="@{/dhruv/recursion}">-->
-<!--        <label>Decimal Number Value</label>-->
-<!--        <input type="number" min="1" max="100" th:name="bin" th:value="${bin}">-->
-<!--        <input type="submit">-->
-<!--    </form>-->
-<!--    <p th:text="${finbin}"></p>-->
 
 
 
