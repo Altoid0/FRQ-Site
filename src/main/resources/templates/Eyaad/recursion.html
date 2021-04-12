@@ -15,6 +15,8 @@
     <h3>Factorial</h3>
     <form th:action="@{/eyaad/recursion}">
         <label>This program will return the factorial of a number you put</label>
+        <br>
+        <label>Enter Number</label>
         <input type="number" min="1" max="100" th:name="num" th:value="${num}">
         <input type="submit">
     </form>
@@ -23,11 +25,28 @@
     <h3>Decimal to Binary</h3>
     <form th:action="@{/eyaad/recursion}">
         <label>This program will convert a decimal number to binary</label>
+        <br>
+        <label>Enter Binary</label>
         <input type="number" min="1" max="1023" th:name="decimal" th:value="${decimal}">
         <input type="submit">
     </form>
 
     <p th:text="${bin}"></p>
+
+    <h3>Greatest Common Factor Lab</h3>
+    <form th:action="@{/eyaad/recursion}">
+        <label>This program will find the greatest common factor of two numbers</label>
+        <br>
+        <label>Enter Number 1 here</label>
+        <input type="number" min="1" max="1023" th:name="num1" th:value="${num1}">
+        <br>
+        <label>Enter Number 2 here</label>
+        <input type="number" min="1" max="1023" th:name="num2" th:value="${num2}">
+        <br>
+        <input type="submit">
+    </form>
+
+    <p th:text="${greatest}"></p>
 
 </div>
 </body>

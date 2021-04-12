@@ -26,6 +26,10 @@ public class Recursion {
         return gcf(b, a % b);
     }
 
+    public String returnGcf(int a, int b) {
+        return "The greatest common factor of " + a + " and " + b + " is " + gcf(a,b);
+    }
+
     //Convert decimal to binary with recursion
     public int decimalToBinary(int n) {
         if (n <= 1) {

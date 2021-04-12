@@ -19,7 +19,7 @@ public class EyaadController {
         }
 
         @GetMapping("/recursion")
-        public String recursion(@RequestParam(value ="num", required = false) Integer num, @RequestParam(value = "decimal", required = false) Integer decimal, Model model) {
+        public String recursion(@RequestParam(value ="num", required = false) Integer num, @RequestParam(value = "decimal", required = false) Integer decimal, @RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2, Model model) {
             Recursion recursion = new Recursion();
             if (num == null) {
                 num = 1;
@@ -27,8 +27,15 @@ public class EyaadController {
             if (decimal == null) {
                 decimal = 255;
             }
+            if (num1 == null) {
+                num1 = 7;
+            }
+            if (num2 == null) {
+                num2 = 3;
+            }
             model.addAttribute("numb", recursion.returnFact(num));
             model.addAttribute("bin", recursion.returnBinary(decimal));
+            model.addAttribute("greatest", recursion.returnGcf(num1, num2));
             return "Eyaad/recursion.html";
         }
 
