@@ -6,8 +6,7 @@ public class PictureBook extends Book {
         super(t, a);
         illustrator = i;
     }
-    public String printBookInfo() {
-        super.printBookInfo();
-        return super.printBookInfo() + " and illustrated by " + illustrator;
+    public String toString() {
+        return super.toString() + " and illustrated by " + illustrator;
     }
 }

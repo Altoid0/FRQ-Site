@@ -49,11 +49,11 @@ public class EyaadController {
             }
             if (illustrator == null || illustrator == "") {
                 Book book = new Book(title, author);
-                model.addAttribute("sentence", book.printBookInfo());
+                model.addAttribute("sentence", book);
                 return "Eyaad/inheritance.html";
             }
             PictureBook picturebook = new PictureBook(title, author, illustrator);
-            model.addAttribute("sentence", picturebook.printBookInfo());
+            model.addAttribute("sentence", picturebook);
             return "Eyaad/inheritance.html";
         }
 

@@ -9,7 +9,7 @@ public class Book {
         author = a;
     }
 
-    public String printBookInfo() {
+    public String toString() {
         return "Your book is " + title + ", written by " + author;
     }
 }
