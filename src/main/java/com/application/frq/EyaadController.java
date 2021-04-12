@@ -1,6 +1,8 @@
 package com.application.frq;
 
 import com.application.frq.Eyaad.Recursion;
+import com.application.frq.Eyaad.Book;
+import com.application.frq.Eyaad.PictureBook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,24 @@ public class EyaadController {
             model.addAttribute("numb", recursion.returnFact(num));
             model.addAttribute("bin", recursion.returnBinary(decimal));
             return "Eyaad/recursion.html";
+        }
+
+        @GetMapping("/inheritance")
+        public String inheritance(@RequestParam(value="title", required = false) String title, @RequestParam(value="author", required = false) String author, @RequestParam(value="illustrator", required = false) String illustrator, Model model) {
+            if (title == null || title == "") {
+                title = "League of Legends Guide";
+            }
+            if (author == null || author == "") {
+                author = "5 year Challenger Eyaad Mir";
+            }
+            if (illustrator == null || illustrator == "") {
+                Book book = new Book(title, author);
+                model.addAttribute("sentence", book.printBookInfo());
+                return "Eyaad/inheritance.html";
+            }
+            PictureBook picturebook = new PictureBook(title, author, illustrator);
+            model.addAttribute("sentence", picturebook.printBookInfo());
+            return "Eyaad/inheritance.html";
         }
 
        /* @GetMapping("/fac")

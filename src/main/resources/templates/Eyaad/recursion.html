@@ -23,7 +23,7 @@
     <h3>Decimal to Binary</h3>
     <form th:action="@{/eyaad/recursion}">
         <label>This program will convert a decimal number to binary</label>
-        <input type="number" th:name="decimal" th:value="${decimal}">
+        <input type="number" min="1" max="1023" th:name="decimal" th:value="${decimal}">
         <input type="submit">
     </form>
 
