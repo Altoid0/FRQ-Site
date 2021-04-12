@@ -46,5 +46,6 @@ class Driver {
         for(int i=0; i < Cars.size(); i++){
             System.out.println(Cars.get(i));
         }
+        System.out.println("The total amount of cars currently in the lot is " + Car.lotSize);
     }
 }
