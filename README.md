@@ -13,3 +13,110 @@ Simple Spring Boot Site to serve AP CSA FRQs. Website [Here](http://frq.sylicia.
 2. Build to jar ```target/frq-site.jar```
 3. Move keys to ```keys/kashmir.key``` 
 4. Run ```sh deploy.sh``` 
+
+## Self-Grading 
+
+### Eyaad Mir
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution | 1 | |
+| Build recursion example(s) into your individual section | 1 | |
+| Have default input that automatically runs and logs on a Web page | 1 | |
+| Have ability to adjust run based off of user input | 1 | |
+| WOW | 1 | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution | 1 | |
+| Build POJO example(s) | 1 | |
+| Have default data that automatically displays on Web page (use toString) | 1 | |
+| Build multiple derivates from Super via Extends | 1 | |
+| WOW | 1 | |
+
+Total Score: 10/10
+
+### Nathaniel Cherian
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW |  | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+Total Score:
+
+### Anthony Vo
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW |  | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+Total Score: 
+
+### Tanay Shah
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW |  | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+Total Score: 
+
+### Dhruv Kanetkar
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW |  | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+Total Score: 
