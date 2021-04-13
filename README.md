@@ -35,6 +35,8 @@ Inheritance
 | Build multiple derivates from Super via Extends | 1 | |
 | WOW | 1 | |
 
+Total Score: 10/10
+
 ### Nathaniel Cherian
 Recursion
 | Point | Score(0 or 1) | Justification with link |
@@ -43,7 +45,7 @@ Recursion
 | Build recursion example(s) into your individual section |  | |
 | Have default input that automatically runs and logs on a Web page |  | |
 | Have ability to adjust run based off of user input |  | |
-| WOW | 1 | |
+| WOW |  | |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
@@ -54,6 +56,7 @@ Inheritance
 | Build multiple derivates from Super via Extends |  | |
 | WOW |  | |
 
+Total Score:
 
 ### Anthony Vo
 Recursion
@@ -63,7 +66,7 @@ Recursion
 | Build recursion example(s) into your individual section |  | |
 | Have default input that automatically runs and logs on a Web page |  | |
 | Have ability to adjust run based off of user input |  | |
-| WOW | 1 | |
+| WOW |  | |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
@@ -74,6 +77,7 @@ Inheritance
 | Build multiple derivates from Super via Extends |  | |
 | WOW |  | |
 
+Total Score: 
 
 ### Tanay Shah
 Recursion
@@ -83,7 +87,7 @@ Recursion
 | Build recursion example(s) into your individual section |  | |
 | Have default input that automatically runs and logs on a Web page |  | |
 | Have ability to adjust run based off of user input |  | |
-| WOW | 1 | |
+| WOW |  | |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
@@ -94,6 +98,7 @@ Inheritance
 | Build multiple derivates from Super via Extends |  | |
 | WOW |  | |
 
+Total Score: 
 
 ### Dhruv Kanetkar
 Recursion
@@ -103,7 +108,7 @@ Recursion
 | Build recursion example(s) into your individual section |  | |
 | Have default input that automatically runs and logs on a Web page |  | |
 | Have ability to adjust run based off of user input |  | |
-| WOW | 1 | |
+| WOW |  | |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
@@ -113,3 +118,5 @@ Inheritance
 | Have default data that automatically displays on Web page (use toString) |  | |
 | Build multiple derivates from Super via Extends |  | |
 | WOW |  | |
+
+Total Score: 
