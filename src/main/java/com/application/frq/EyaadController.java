@@ -1,6 +1,8 @@
 package com.application.frq;
 
 import com.application.frq.Eyaad.Recursion;
+import com.application.frq.Eyaad.Book;
+import com.application.frq.Eyaad.PictureBook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,7 @@ public class EyaadController {
         }
 
         @GetMapping("/recursion")
-        public String recursion(@RequestParam(value ="num", required = false) Integer num, @RequestParam(value = "decimal", required = false) Integer decimal, Model model) {
+        public String recursion(@RequestParam(value ="num", required = false) Integer num, @RequestParam(value = "decimal", required = false) Integer decimal, @RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2, Model model) {
             Recursion recursion = new Recursion();
             if (num == null) {
                 num = 1;
@@ -25,9 +27,34 @@ public class EyaadController {
             if (decimal == null) {
                 decimal = 255;
             }
+            if (num1 == null) {
+                num1 = 7;
+            }
+            if (num2 == null) {
+                num2 = 3;
+            }
             model.addAttribute("numb", recursion.returnFact(num));
             model.addAttribute("bin", recursion.returnBinary(decimal));
+            model.addAttribute("greatest", recursion.returnGcf(num1, num2));
             return "Eyaad/recursion.html";
+        }
+
+        @GetMapping("/inheritance")
+        public String inheritance(@RequestParam(value="title", required = false) String title, @RequestParam(value="author", required = false) String author, @RequestParam(value="illustrator", required = false) String illustrator, Model model) {
+            if (title == null || title == "") {
+                title = "League of Legends Guide";
+            }
+            if (author == null || author == "") {
+                author = "5 year Challenger Eyaad Mir";
+            }
+            if (illustrator == null || illustrator == "") {
+                Book book = new Book(title, author);
+                model.addAttribute("sentence", book);
+                return "Eyaad/inheritance.html";
+            }
+            PictureBook picturebook = new PictureBook(title, author, illustrator);
+            model.addAttribute("sentence", picturebook);
+            return "Eyaad/inheritance.html";
         }
 
        /* @GetMapping("/fac")
