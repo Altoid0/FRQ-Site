@@ -19,6 +19,7 @@ Simple Spring Boot Site to serve AP CSA FRQs. Website [Here](http://frq.sylicia.
 # Eyaad Mir
 Recursion
 | Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
 | Build individual section into your Scrum Team project for execution | 1 | |
 | Build recursion example(s) into your individual section | 1 | |
 | Have default input that automatically runs and logs on a Web page | 1 | |
@@ -27,6 +28,7 @@ Recursion
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
 | Build individual section into your Scrum Team project for execution | 1 | |
 | Build POJO example(s) | 1 | |
 | Have default data that automatically displays on Web page (use toString) | 1 | |
