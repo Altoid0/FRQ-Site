@@ -1,6 +1,7 @@
 package com.application.frq;
 
 import com.application.frq.Anthony.Recursion;
+import com.application.frq.Anthony.Insertion;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,5 +33,23 @@ public class AnthonyController {
         return "Anthony/recursion.html";
     }
 
+    @GetMapping("/insertion")
+    public String insertion(@RequestParam(value = "min", required = false) Integer min,
+                            @RequestParam(value = "max", required = false) Integer max,
+                            @RequestParam(value = "size", required = false) Integer size, Model model){
+        Insertion i = new Insertion();
+        if (min == null)
+            min = 0;
+        if (max == null)
+            max = 10;
+        if (size == null)
+            size = 5;
+        long startTime = System.nanoTime();
+        model.addAttribute("insertion", i.insertionSort(min, max, size));
+        long finalTime = System.nanoTime() - startTime;
+        model.addAttribute("time", "Time taken: " + finalTime + " nanoseconds");
+
+        return "Anthony/insertion.html";
+    }
 
 }
