@@ -16,7 +16,7 @@ Simple Spring Boot Site to serve AP CSA FRQs. Website [Here](http://frq.sylicia.
 
 ## Self-Grading 
 
-# Eyaad Mir
+### Eyaad Mir
 Recursion
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
@@ -34,3 +34,82 @@ Inheritance
 | Have default data that automatically displays on Web page (use toString) | 1 | |
 | Build multiple derivates from Super via Extends | 1 | |
 | WOW | 1 | |
+
+### Nathaniel Cherian
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW | 1 | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+
+### Anthony Vo
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW | 1 | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+
+### Tanay Shah
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW | 1 | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
+
+
+### Dhruv Kanetkar
+Recursion
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build recursion example(s) into your individual section |  | |
+| Have default input that automatically runs and logs on a Web page |  | |
+| Have ability to adjust run based off of user input |  | |
+| WOW | 1 | |
+
+Inheritance
+| Point | Score(0 or 1) | Justification with link |
+| ----- | ------------- | ----------------------- |
+| Build individual section into your Scrum Team project for execution |  | |
+| Build POJO example(s) |  | |
+| Have default data that automatically displays on Web page (use toString) |  | |
+| Build multiple derivates from Super via Extends |  | |
+| WOW |  | |
