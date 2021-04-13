@@ -32,6 +32,22 @@ class SportsCar extends Car {
         return("This " + super.make + " " + super.model + " was manufactured in " + super.age + " and has a top speed of " + topSpeed + " mph");
     }
 }
+
+class Truck extends Car {
+
+    private int hp;
+
+    public Truck(String make, String model, int age, int hp){
+        super(make, model, age);
+        this.hp = hp;
+    }
+    public void setHorsePower(int newHorsePower){
+        hp = newHorsePower;
+    }
+    public String toString(){
+        return("This " + super.make + " " + super.model + " was manufactured in " + super.age + " and has " + hp + " hp");
+    }
+}
 class Driver {
     public static void main(String args[]) {
 
@@ -42,6 +58,8 @@ class Driver {
         SportsCar brz = new SportsCar("Subaru", "Brz", 2020, 145);
         Cars.add(brz);
         miata.setTopSpeed(145);
+        Truck f150 = new Truck("Ford", "F150", 2017, 350);
+        Cars.add(f150);
 
         for(int i=0; i < Cars.size(); i++){
             System.out.println(Cars.get(i));
