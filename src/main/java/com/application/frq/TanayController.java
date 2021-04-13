@@ -24,7 +24,7 @@ public class TanayController {
     }
 
     @GetMapping("/recursion")
-    public String recursion(@RequestParam(value = "number", required = false) Integer number, Model model){
+    public String recursion(@RequestParam(value = "number", required = false, defaultValue = "10") Integer number, Model model){
 
         Integer factorial;
         if (number == null) {
