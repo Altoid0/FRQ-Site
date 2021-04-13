@@ -62,22 +62,22 @@ Total Score: 10/10
 Recursion
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
-| Build individual section into your Scrum Team project for execution |  | |
-| Build recursion example(s) into your individual section |  | |
-| Have default input that automatically runs and logs on a Web page |  | |
-| Have ability to adjust run based off of user input |  | |
-| WOW |  | |
+| Build individual section into your Scrum Team project for execution | 1 | [Individual folder](https://github.com/Altoid0/FRQ-Site/tree/master/src/main/resources/templates/Anthony) for pages as well as [controller](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/AnthonyController.java) for pages |
+| Build recursion example(s) into your individual section | 1 | [Recursion java file](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Anthony/Recursion.java) for algorithms as well as [separate page](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/resources/templates/Anthony/recursion.html) for hosting labs |
+| Have default input that automatically runs and logs on a Web page | 1 | Controller detects for no input (or default state) and includes [default values](https://github.com/Altoid0/FRQ-Site/blob/4de02d7288e08e7f635297b0012e894df4feeea1/src/main/java/com/application/frq/AnthonyController.java#L24-L29) |
+| Have ability to adjust run based off of user input | 1 | [Request mapping](https://github.com/Altoid0/FRQ-Site/blob/4de02d7288e08e7f635297b0012e894df4feeea1/src/main/java/com/application/frq/AnthonyController.java#L21-L22) for user input, as seen on [site](http://frq.sylicia.com/anthony/recursion) |
+| WOW | 1 | Factors in [time considerations](https://github.com/Altoid0/FRQ-Site/blob/4de02d7288e08e7f635297b0012e894df4feeea1/src/main/java/com/application/frq/AnthonyController.java#L30-L38). Also did the [frog problem](https://github.com/Altoid0/FRQ-Site/blob/4de02d7288e08e7f635297b0012e894df4feeea1/src/main/java/com/application/frq/Anthony/Recursion.java#L14-L26) |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
-| Build individual section into your Scrum Team project for execution |  | |
-| Build POJO example(s) |  | |
-| Have default data that automatically displays on Web page (use toString) |  | |
-| Build multiple derivates from Super via Extends |  | |
-| WOW |  | |
+| Build individual section into your Scrum Team project for execution | 1 | [Individual page in site](http://frq.sylicia.com/anthony/sql/player) |
+| Build POJO example(s) | 1 | [Player object](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Anthony/modelsSQL/Player.java) displays POJO mastery |
+| Have default data that automatically displays on Web page (use toString) | 1 | Data will remain on [site](http://frq.sylicia.com/anthony/sql/player) after one inputs data |
+| Build multiple derivatives from Super via Extends | 1 | Code uses multiple extends (like [here](https://github.com/Altoid0/FRQ-Site/blob/4de02d7288e08e7f635297b0012e894df4feeea1/src/main/java/com/application/frq/Anthony/modelsSQL/PlayerJpaRepository.java#L11) and [here](https://github.com/Altoid0/FRQ-Site/blob/4de02d7288e08e7f635297b0012e894df4feeea1/src/main/java/com/application/frq/Anthony/modelsSQL/SQLDialect.java#L14) |
+| WOW | 1 | [Working database](http://frq.sylicia.com/anthony/sql/player) on site |
 
-Total Score: 
+Total Score: 10
 
 ### Tanay Shah
 Recursion
