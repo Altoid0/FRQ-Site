@@ -82,22 +82,22 @@ Total Score:
 Recursion
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
-| Build individual section into your Scrum Team project for execution |  | |
-| Build recursion example(s) into your individual section |  | |
-| Have default input that automatically runs and logs on a Web page |  | |
-| Have ability to adjust run based off of user input |  | |
-| WOW |  | |
+| Build individual section into your Scrum Team project for execution | 1 | [Link](https://github.com/Altoid0/FRQ-Site/tree/master/src/main/java/com/application/frq/Tanay) |
+| Build recursion example(s) into your individual section | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Tanay/Recursion.java) |
+| Have default input that automatically runs and logs on a Web page | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/TanayController.java#L27) |
+| Have ability to adjust run based off of user input | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/TanayController.java#L27) |
+| WOW | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Tanay/Recursion.java#L14-L20) |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
-| Build individual section into your Scrum Team project for execution |  | |
-| Build POJO example(s) |  | |
-| Have default data that automatically displays on Web page (use toString) |  | |
-| Build multiple derivates from Super via Extends |  | |
-| WOW |  | |
+| Build individual section into your Scrum Team project for execution | 1 | [Link](https://github.com/Altoid0/FRQ-Site/tree/master/src/main/java/com/application/frq/Tanay) |
+| Build POJO example(s) | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Tanay/Car.java) [Link2](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/TanayController.java#L46) |
+| Have default data that automatically displays on Web page (use toString) | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/TanayController.java#L41-L44) [Link2](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Tanay/SportsCar.java#L18) |
+| Build multiple derivates from Super via Extends | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Tanay/SportsCar.java#L3) |
+| WOW | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Tanay/Car.java#L21-L37) |
 
-Total Score: 
+Total Score: 10
 
 ### Dhruv Kanetkar
 Recursion
