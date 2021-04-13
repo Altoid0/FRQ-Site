@@ -22,7 +22,7 @@ public class AnthonySQLController implements WebMvcConfigurer {
     @Autowired
     private PlayerSqlRepository repository;
 
-    @GetMapping("/Anthony/sql/player")
+    @GetMapping("/anthony/sql/player")
     public String player(Model model) {
         List<Player> list = repository.listAll();
         model.addAttribute("list", list);
@@ -33,7 +33,7 @@ public class AnthonySQLController implements WebMvcConfigurer {
         @return - template for Player form
         @param - Player Class
     */
-    @GetMapping("/Anthony/sql/playercreate")
+    @GetMapping("/anthony/sql/playercreate")
     public String playerAdd(Player player) {
         return "Anthony/mvc/sql/playercreate";
     }
@@ -42,7 +42,7 @@ public class AnthonySQLController implements WebMvcConfigurer {
     @param - Player object with @Valid
     @param - BindingResult object
      */
-    @PostMapping("/Anthony/sql/playercreate")
+    @PostMapping("/anthony/sql/playercreate")
     public String playerSave(@Valid Player player, BindingResult bindingResult) {
         // Validation of Decorated PlayerForm attributes
         if (bindingResult.hasErrors()) {
@@ -50,16 +50,16 @@ public class AnthonySQLController implements WebMvcConfigurer {
         }
         repository.save(player);
         // Redirect to next step
-        return "redirect:/sql/player";
+        return "redirect:/anthony/sql/player";
     }
 
-    @GetMapping("/Anthony/sql/playerupdate/{id}")
+    @GetMapping("/anthony/sql/playerupdate/{id}")
     public String playerUpdate(@PathVariable("id") int id, Model model) {
         model.addAttribute("player", repository.get(id));
         return "Anthony/mvc/sql/playerupdate";
     }
 
-    @PostMapping("/Anthony/sql/playerupdate")
+    @PostMapping("/anthony/sql/playerupdate")
     public String playerUpdateSave(@Valid Player player, BindingResult bindingResult) {
         // Validation of Decorated PlayerForm attributes
         if (bindingResult.hasErrors()) {
@@ -67,13 +67,13 @@ public class AnthonySQLController implements WebMvcConfigurer {
         }
         repository.save(player);
         // Redirect to next step
-        return "redirect:/sql/player";
+        return "redirect:/anthony/sql/player";
     }
 
-    @GetMapping("/Anthony/sql/playerdelete/{id}")
+    @GetMapping("/anthony/sql/playerdelete/{id}")
     public String playerDelete(@PathVariable("id") long id) {
         repository.delete(id);
-        return "redirect:/sql/player";
+        return "redirect:/anthony/sql/player";
     }
 
 }
