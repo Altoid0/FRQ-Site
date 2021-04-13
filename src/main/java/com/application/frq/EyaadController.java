@@ -20,6 +20,7 @@ public class EyaadController {
 
         @GetMapping("/recursion")
         public String recursion(@RequestParam(value ="num", required = false) Integer num, @RequestParam(value = "decimal", required = false) Integer decimal, @RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2, Model model) {
+            long startTime = System.nanoTime();
             Recursion recursion = new Recursion();
             if (num == null) {
                 num = 1;
@@ -36,11 +37,14 @@ public class EyaadController {
             model.addAttribute("numb", recursion.returnFact(num));
             model.addAttribute("bin", recursion.returnBinary(decimal));
             model.addAttribute("greatest", recursion.returnGcf(num1, num2));
+            long finalTime = System.nanoTime() - startTime;
+            model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
             return "Eyaad/recursion.html";
         }
 
         @GetMapping("/inheritance")
         public String inheritance(@RequestParam(value="title", required = false) String title, @RequestParam(value="author", required = false) String author, @RequestParam(value="illustrator", required = false) String illustrator, Model model) {
+            long startTime = System.nanoTime();
             if (title == null || title == "") {
                 title = "League of Legends Guide";
             }
@@ -50,10 +54,14 @@ public class EyaadController {
             if (illustrator == null || illustrator == "") {
                 Book book = new Book(title, author);
                 model.addAttribute("sentence", book);
+                long finalTime = System.nanoTime() - startTime;
+                model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
                 return "Eyaad/inheritance.html";
             }
             PictureBook picturebook = new PictureBook(title, author, illustrator);
             model.addAttribute("sentence", picturebook);
+            long finalTime = System.nanoTime() - startTime;
+            model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
             return "Eyaad/inheritance.html";
         }
 
