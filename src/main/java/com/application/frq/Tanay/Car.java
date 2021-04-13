@@ -2,7 +2,7 @@ package com.application.frq.Tanay;
 
 import java.util.ArrayList;
 
-class Car {
+public class Car {
 
     static int lotSize;
     String make;
@@ -17,37 +17,7 @@ class Car {
     }
     public Car(){}
 }
-class SportsCar extends Car {
 
-    private int topSpeed;
-
-    public SportsCar(String make, String model, int age, int topSpeed){
-        super(make, model, age);
-        this.topSpeed = topSpeed;
-    }
-    public void setTopSpeed(int newSpeed){
-        topSpeed = newSpeed;
-    }
-    public String toString(){
-        return("This " + super.make + " " + super.model + " was manufactured in " + super.age + " and has a top speed of " + topSpeed + " mph");
-    }
-}
-
-class Truck extends Car {
-
-    private int hp;
-
-    public Truck(String make, String model, int age, int hp){
-        super(make, model, age);
-        this.hp = hp;
-    }
-    public void setHorsePower(int newHorsePower){
-        hp = newHorsePower;
-    }
-    public String toString(){
-        return("This " + super.make + " " + super.model + " was manufactured in " + super.age + " and has " + hp + " hp");
-    }
-}
 class Driver {
     public static void main(String args[]) {
 
