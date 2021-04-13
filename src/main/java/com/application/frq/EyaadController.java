@@ -1,5 +1,8 @@
 package com.application.frq;
 
+import java.util.ArrayList;
+
+import com.application.frq.Eyaad.InsertionSort;
 import com.application.frq.Eyaad.Recursion;
 import com.application.frq.Eyaad.Book;
 import com.application.frq.Eyaad.PictureBook;
@@ -63,6 +66,26 @@ public class EyaadController {
             long finalTime = System.nanoTime() - startTime;
             model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
             return "Eyaad/inheritance.html";
+        }
+
+        @GetMapping("/insertion")
+        public String insertion(@RequestParam(value="length", required = false, defaultValue = "8") int length, Model model) {
+            long startTime = System.nanoTime();
+            ArrayList<Integer> array = new ArrayList<Integer>();
+            for (int i = 0; i < length; i++) {
+                array.add((int)(Math.random()*100+1));
+            }
+            model.addAttribute("unsorted", "This is the unsorted array randomly generated: " + array.toString());
+            //Integer[] arr = (Integer[]) array.toArray();
+            Integer[] arr = new Integer[length];
+            for (int j = 0; j < length; j++) {
+                arr[j] = array.get(j);
+            }
+            InsertionSort insertion = new InsertionSort();
+            model.addAttribute("sorted", "This is the array after sorting: " + insertion.returnSort(arr));
+            long finalTime = System.nanoTime() - startTime;
+            model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
+            return "Eyaad/insertion.html";
         }
 
        /* @GetMapping("/fac")

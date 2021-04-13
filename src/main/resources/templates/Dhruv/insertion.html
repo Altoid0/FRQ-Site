@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertion | Dhruv</title>
+</head>
+<body>
+    <h1>Insertion Sort</h1>
+    <p>This is a demonstration of insertion sort.</p>
+
+
+    <form th:action="@{/dhruv/insertion}">
+        <p>Enter an array of numbers encased in square brackets and separated by commas ex. [2,9,123,46,17,56,63]</p>
+        <label for="length">Array</label>
+        <input type="text" id="length" th:name="unsortarray" th:value="${unsortarray}">
+    </form>
+
+    <p>Unsorted Array</p>
+    <p th:text="${unsort}"></p>
+    <p>Sorted Array</p>
+    <p th:text="${sort}"></p>
+
+</body>
+</html>
