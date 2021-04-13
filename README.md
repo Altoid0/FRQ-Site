@@ -103,19 +103,19 @@ Total Score: 10
 Recursion
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
-| Build individual section into your Scrum Team project for execution |  | |
-| Build recursion example(s) into your individual section |  | |
-| Have default input that automatically runs and logs on a Web page |  | |
-| Have ability to adjust run based off of user input |  | |
-| WOW |  | |
+| Build individual section into your Scrum Team project for execution | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/DhruvController.java) recursion section starting at "public String recursion" |
+| Build recursion example(s) into your individual section | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Dhruv/Recursion.java) |
+| Have default input that automatically runs and logs on a Web page | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/DhruvController.java#L28) |
+| Have ability to adjust run based off of user input | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/resources/templates/Dhruv/recursion.html#L17) |
+| WOW | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Dhruv/Recursion.java) |
 
 Inheritance
 | Point | Score(0 or 1) | Justification with link |
 | ----- | ------------- | ----------------------- |
-| Build individual section into your Scrum Team project for execution |  | |
-| Build POJO example(s) |  | |
-| Have default data that automatically displays on Web page (use toString) |  | |
-| Build multiple derivates from Super via Extends |  | |
-| WOW |  | |
+| Build individual section into your Scrum Team project for execution | 1 | [Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Dhruv/Inheritance.java#L39) |
+| Build POJO example(s) | 1 |[Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Dhruv/Inheritance.java#L13) |
+| Have default data that automatically displays on Web page (use toString) | 1 |[Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/DhruvController.java#L56) |
+| Build multiple derivates from Super via Extends | 1 |[Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Dhruv/Inheritance.java#L31) |
+| WOW | 1 |[Link](https://github.com/Altoid0/FRQ-Site/blob/master/src/main/java/com/application/frq/Dhruv/Inheritance.java) |
 
-Total Score: 
+Total Score: 10
