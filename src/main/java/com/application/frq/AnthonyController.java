@@ -27,8 +27,16 @@ public class AnthonyController {
         if (frogInt == null) {
             frogInt = 2;
         }
+        long startFacTime = System.nanoTime();
         model.addAttribute("factorial", r.returnFac(facInt));
+        long finalFacTime = System.nanoTime() - startFacTime;
+        model.addAttribute("facTime", "Time taken: " + finalFacTime + " nanoseconds");
+
+        long startFrogTime = System.nanoTime();
         model.addAttribute("frogs", r.returnFrog(frogInt));
+        long finalFrogTime = System.nanoTime() - startFrogTime;
+        model.addAttribute("frogTime", "Time taken: " + finalFrogTime + " nanoseconds");
+
 
         return "Anthony/recursion.html";
     }
