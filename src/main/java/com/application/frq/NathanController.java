@@ -121,6 +121,11 @@ public class NathanController {
         return "Nathan/inheritance.html";
     }
 
+    @GetMapping("/multi-sort")
+    public String multiSort(Model model){
+        return "multi-sort";
+    }
+
 
 
 }
