@@ -152,8 +152,8 @@ public class NathanController {
             }
 
             Object[] sortedObjects = new Object[objects.length];
-            if(sortType.equals("merge")){
-                sortedObjects = ms.mergeSort(objects);
+            if(sortType.equals("bubble")){
+                sortedObjects = ms.bubbleSort(objects);
             }else if(sortType.equals("selection")){
                 sortedObjects = ms.selectionSort(objects);
             }else { //default to insertion

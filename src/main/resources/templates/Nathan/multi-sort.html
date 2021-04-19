@@ -13,7 +13,7 @@
     <table>
         <tr>
             <th>index</th>
-            <th>value</th>
+            <th th:text="${dataType}"></th>
         </tr>
 
         <tr th:each="s: ${sortedData}">
@@ -29,8 +29,8 @@
         <legend>Sort type:</legend>
         <input type="radio" th:name="sortType" id="insertion" th:value="insertion" required>
         <label for="insertion">Insertion Sort</label>
-        <input type="radio" th:name="sortType" id="merge" th:value="merge">
-        <label for="merge">Merge Sort</label>
+        <input type="radio" th:name="sortType" id="bubble" th:value="bubble">
+        <label for="bubble">Bubble Sort</label>
         <input type="radio" th:name="sortType" id="selection" th:value="selection">
         <label for="selection">Selection Sort</label>
     </div>

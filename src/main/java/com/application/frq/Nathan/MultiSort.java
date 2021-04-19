@@ -27,13 +27,39 @@ public class MultiSort<T> {
         return arr;
     }
 
-    public <T extends Comparable<T>> T[] mergeSort(T[] arr){
+    public <T extends Comparable<T>> T[] bubbleSort(T[] arr){
+
+        boolean sorted = false;
+        while (!sorted){
+            sorted = true;
+            for(int i=0;i<arr.length-1;i++){
+                if(arr[i].compareTo(arr[i+1]) > 0){
+                    sorted = false;
+                    T temp  = arr[i+1];
+                    arr[i+1] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
 
         return arr;
     }
 
     public <T extends Comparable<T>> T[] selectionSort(T[] arr){
 
+        for(int i =0; i< arr.length;i++){
+            int lowest = i;
+            for(int j=i;j<arr.length;j++){
+                if(arr[j].compareTo(arr[lowest]) < 0){
+                    lowest = j;
+                }
+            }
+
+            //Swap
+            T itemLowest = arr[lowest];
+            arr[lowest] = arr[i];
+            arr[i] = itemLowest;
+        }
         return arr;
     }
 
