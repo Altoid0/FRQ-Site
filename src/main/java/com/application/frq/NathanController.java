@@ -2,6 +2,7 @@ package com.application.frq;
 
 import com.application.frq.Nathan.Inheritance;
 import com.application.frq.Nathan.Insertion;
+import com.application.frq.Nathan.MultiSort;
 import com.application.frq.Nathan.Recursion;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -122,8 +124,54 @@ public class NathanController {
     }
 
     @GetMapping("/multi-sort")
-    public String multiSort(Model model){
-        return "multi-sort";
+    public String multiSort(@RequestParam(value = "sortType", required = false) String sortType,
+                            @RequestParam(value = "dataType", required = false) String dataType, Model model){
+
+        System.out.println(String.format("sortType %s, dataType %s", sortType, dataType));
+
+        if(sortType != null && dataType != null){
+            MultiSort ms;
+            if(dataType.equals("string")){
+                ms = new MultiSort<Integer>();
+            }else if(dataType.equals("car")){
+                ms = new MultiSort<String>();
+            }else{ //default to integer
+                ms = new MultiSort<MultiSort.Car>();
+                dataType = "integer";
+            }
+
+            Comparable[] objects = new Comparable[10];
+            for(int i=0;i<objects.length;i++){
+                if(dataType.equals("string")){
+                    objects[i] = new String("test");
+                }else if(dataType.equals("car")){
+                    objects[i] = new MultiSort.Car((int)(Math.random()*100));
+                }else if(dataType.equals("integer")){
+                    objects[i] = new Integer((int)(Math.random()*100));
+                }
+            }
+
+            Object[] sortedObjects = new Object[objects.length];
+            if(sortType.equals("merge")){
+                sortedObjects = ms.mergeSort(objects);
+            }else if(sortType.equals("selection")){
+                sortedObjects = ms.selectionSort(objects);
+            }else { //default to insertion
+                sortedObjects = ms.insertionSort(objects);
+            }
+
+            String[] datas = new String[sortedObjects.length];
+            for(int i=0;i<objects.length;i++){
+                datas[i] = sortedObjects[i].toString(); //replace objects here
+            }
+
+            model.addAttribute("sortedData",datas);
+        }
+
+
+        model.addAttribute("sortType", sortType);
+        model.addAttribute("dataType", dataType);
+        return "Nathan/multi-sort";
     }
 
 

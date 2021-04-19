@@ -1,35 +1,7 @@
 package com.application.frq.Nathan;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-
-class Car implements Comparable<Car>{
-    private int price;
-    public Car(int price){
-        this.price = price;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "price=" + price +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Car c) {
-        if(c.getPrice() < this.getPrice()){
-            return 1;
-        }else if(c.getPrice() > this.getPrice()){
-            return -1;
-        }else{
-            return 0;
-        }
-    }
-}
 
 public class MultiSort<T> {
 
@@ -55,6 +27,17 @@ public class MultiSort<T> {
         return arr;
     }
 
+    public <T extends Comparable<T>> T[] mergeSort(T[] arr){
+
+        return arr;
+    }
+
+    public <T extends Comparable<T>> T[] selectionSort(T[] arr){
+
+        return arr;
+    }
+
+
     public static void main(String[] args) {
         String[] strings = new String[]{"nathan", "apple", "classroom", "hat", "cat"};
         MultiSort<String> ms = new MultiSort<>();
@@ -67,8 +50,42 @@ public class MultiSort<T> {
         MultiSort<Car> cs = new MultiSort<>();
         System.out.println(Arrays.toString(cs.insertionSort(cars)));
 
+        Integer[] ints = new Integer[10];
+        for(int i=0;i<ints.length;i++){
+            ints[i] = (int)(Math.random()*1000);
+        }
+        MultiSort<Integer> is = new MultiSort<>();
+        System.out.println(Arrays.toString(is.insertionSort(ints)));
+
     }
 
+    public static class Car implements Comparable<Car>{
+        private int price;
+        public Car(int price){
+            this.price = price;
+        }
 
+        public int getPrice() {
+            return price;
+        }
+
+        @Override
+        public String toString() {
+            return "Car{" +
+                    "price=$" + price +
+                    '}';
+        }
+
+        @Override
+        public int compareTo(Car c) {
+            if(c.getPrice() < this.getPrice()){
+                return 1;
+            }else if(c.getPrice() > this.getPrice()){
+                return -1;
+            }else{
+                return 0;
+            }
+        }
+    }
 
 }

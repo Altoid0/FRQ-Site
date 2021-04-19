@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Multi-Sort | Nathaniel</title>
 </head>
 <body>
 
+<h1>Multi sort</h1>
+<p>This is a demonstration of all of the different sorts in APCSA </p>
 
+<div class="data">
+    <table>
+        <tr>
+            <th>index</th>
+            <th>value</th>
+        </tr>
+
+        <tr th:each="s: ${sortedData}">
+            <td th:text="${sStat.index}" />
+            <td th:text="${s}" />
+        </tr>
+
+    </table>
+</div>
+
+<form th:action="@{/nathan/multi-sort}">
+    <div>
+        <legend>Sort type:</legend>
+        <input type="radio" th:name="sortType" id="insertion" th:value="insertion" required>
+        <label for="insertion">Insertion Sort</label>
+        <input type="radio" th:name="sortType" id="merge" th:value="merge">
+        <label for="merge">Merge Sort</label>
+        <input type="radio" th:name="sortType" id="selection" th:value="selection">
+        <label for="selection">Selection Sort</label>
+    </div>
+
+    <div>
+        <legend>Data type:</legend>
+        <input type="radio" th:name="dataType" id="integer" th:value="integer" required>
+        <label for="integer">Integer</label>
+        <input type="radio" th:name="dataType" id="string" th:value="string">
+        <label for="string">String</label>
+        <input type="radio" th:name="dataType" id="car" th:value="car">
+        <label for="car">Car</label>
+    </div>
+
+    <input type="submit">
+</form>
 
 </body>
+
+<script th:inline="javascript">
+    var sortType = /*[[${sortType}]]*/ ||= "insertion";
+    var dataType = /*[[${dataType}]]*/ ||= "integer";
+    sortType ||= "insertion";
+    dataType ||= "integer";
+
+    console.log(sortType, dataType);
+    document.getElementById(sortType).setAttribute("checked","checked")
+    document.getElementById(dataType).setAttribute("checked","checked")
+</script>
+
+
 </html>
