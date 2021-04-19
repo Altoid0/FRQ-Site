@@ -13,15 +13,40 @@ public class Insertion {
             nums[j + 1] = value;
         }
     }
+    public void Insertion(String[] letters) {
+        for (int k = 1; k < letters.length; k++) {
+            String key = letters[k];
+            int l = k - 1;
+            while (l >= 0) {
+                if (key.compareTo(letters[l]) > 0) {
+                    break;
+                }
+                letters[l + 1] = letters[l];
+                l--;
+            }
+            letters[l + 1] = key;
+        }
+
+    }
+
 
     public static void main(String args[]) {
         Insertion test = new Insertion();
         int nums[] = {5,6,2,89,123,74};
-        test.Insertion(nums);
+        String letters[] = {"B","F","H","A","C"};
+
         System.out.println("Original Array:");
         System.out.println(Arrays.toString(nums));
+        System.out.println("Original Array:");
+        System.out.println(Arrays.toString(letters));
+
+        test.Insertion(nums);
+        test.Insertion(letters);
+
         System.out.println("Sorted Array:");
         System.out.println(Arrays.toString(nums));
+        System.out.println("Sorted Array:");
+        System.out.println(Arrays.toString(letters));
 
     }
 }
