@@ -75,7 +75,9 @@ public class DhruvController {
     }
 
     @GetMapping("/insertion")
-    public String insertion(@RequestParam(value = "unsortarray", required = false) String unsort, Model model) {
+    public String insertion(@RequestParam(value = "unsortarray", required = false) String unsort,
+                            @RequestParam(value = "strunsortarray", required = false) String strunsort, Model model) {
+        // Insertion Sort for integers
         if (unsort == null) {
             unsort = " ";
         }
@@ -93,12 +95,23 @@ public class DhruvController {
             };
         }
 
+
+        // Insertion Sort for String Sort
+        if (strunsort == null) {
+            strunsort = " ";
+        }
+        String[] stritems = strunsort.split(" ");
+
+
         Insertion test = new Insertion();
         test.Insertion(results);
+        test.Insertion(stritems);
 
 
         model.addAttribute("unsort", str);
         model.addAttribute("sort", Arrays.toString(results));
+        model.addAttribute("strunsort", strunsort);
+        model.addAttribute("strsort", Arrays.toString(stritems));
 
         return "Dhruv/insertion.html";
     }
