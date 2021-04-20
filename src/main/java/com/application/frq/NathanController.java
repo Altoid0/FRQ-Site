@@ -143,9 +143,9 @@ public class NathanController {
             Comparable[] objects = new Comparable[10];
             for(int i=0;i<objects.length;i++){
                 if(dataType.equals("string")){
-                    objects[i] = new String("test");
+                    objects[i] = new String(getRandomWord());
                 }else if(dataType.equals("car")){
-                    objects[i] = new MultiSort.Car((int)(Math.random()*100));
+                    objects[i] = new MultiSort.Car((int)(Math.random()*100000));
                 }else if(dataType.equals("integer")){
                     objects[i] = new Integer((int)(Math.random()*100));
                 }
@@ -176,4 +176,8 @@ public class NathanController {
 
 
 
+    private static String[] words = new String[]{"variable", "rumor", "robin", "examination", "comfort", "metro", "feather", "down", "understanding", "diadem", "shirtdress", "situation", "ikebana", "cappelletti", "stock-in-trade", "store", "gosling", "tobacco", "newsprint", "ingredient", "range", "collector", "southeast", "scaffold", "mask", "well", "boom", "enthusiasm", "consciousness", "association", "facility", "modernist", "walkway", "chandelier", "adrenalin", "ballpark", "achievement", "order", "tummy", "thread", "south", "grandfather", "licorice", "softening", "viewer", "circumference", "beech", "courage", "estrogen", "creme brulee", "evening", "throat", "conversion", "patent", "everything", "harpsichord", "completion", "motor", "celery", "reservation", "crewmember", "repeat", "regulator", "kendo", "cooking", "ordination", "innocent", "residence", "briefing", "convenience", "grain", "widget", "rebellion", "smog", "butler", "lady", "bride", "raven", "parliament", "sir", "merchandise", "iron", "beret", "pinto", "flintlock", "evidence", "lumber", "futon", "developing", "dollop", "goose", "chinchilla", "landscape", "ton", "flame", "television", "venture", "schnitzel", "preparation", "wardrobe"};
+    private static String getRandomWord(){
+        return words[(int)(Math.random()* words.length)];
+    }
 }
