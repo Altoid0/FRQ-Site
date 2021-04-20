@@ -26,7 +26,7 @@ public class Insertion {
             } else {
                 //finalStr += "Comparing new element, " + array[i] + ", to output array elements\n";
                 for (int j=0; j < newArr.size(); j++) {
-                    if (array[i] >= newArr.get(j)) {
+                    if (array[i].compareTo(newArr.get(j)) >= 0) {
                         index = j+1;
                         //finalStr += array[i] + " is greater than " + newArr.get(j) + "\n";
                     } else {
