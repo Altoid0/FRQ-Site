@@ -1,6 +1,7 @@
 package com.application.frq;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.application.frq.Eyaad.InsertionSort;
 import com.application.frq.Eyaad.Recursion;
@@ -91,9 +92,18 @@ public class EyaadController {
             String[] unsorted = array.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s", "").split(",");
             model.addAttribute("notsorted", "This is the array before sorting: " + array);
             InsertionSort stringInsertion = new InsertionSort();
-            model.addAttribute("sorted2", "This is the array after sorting: " + insertion.returnSort(unsorted));
-            long finalTime1 = System.nanoTime() - startTime;
-            model.addAttribute("time2", "Time it took: " + finalTime1 + "nanoseconds");
+            model.addAttribute("sorted2", "This is the array after sorting: " + stringInsertion.returnSort(unsorted));
+            long finalTime1 = System.nanoTime() - startTime1;
+            model.addAttribute("time1", "Time it took: " + finalTime1 + " nanoseconds");
+
+            Book book = new Book("Record of Ragnarok", "Allen");
+            Book book2 = new Book("League of legends guide", "Eyaad");
+            Book book3 = new PictureBook("Last Game", "Anthony", "James Pellerin");
+            Book[] books = {book, book2, book3};
+
+            model.addAttribute("bookunsorted", "This is the array before sorting: " + Arrays.toString(books));
+            InsertionSort bookInsertion = new InsertionSort();
+            model.addAttribute("booksorted", "This is the array after sorting " + Arrays.toString(bookInsertion.sort(books)));
 
 
             return "Eyaad/insertion.html";

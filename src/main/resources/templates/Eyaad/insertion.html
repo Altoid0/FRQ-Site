@@ -28,16 +28,23 @@
     <p th:text="${time}"></p>
 
     <h3>Strings</h3>
-    <form th:action="@{/eyaad/insertion}"></form>
+    <form th:action="@{/eyaad/insertion}">
         <label>Enter a string array and this program will sort it alphabetically. Use this format: ["String1", "String2", "String3"]</label>
         <br>
         <label>Array</label>
-        <input th:name="array" th:value="${array}">
+        <input type="text" th:name="array" th:value="${array}">
         <input type="submit">
     </form>
     <p th:text="${notsorted}"></p>
+
     <p th:text="${sorted2}"></p>
+
     <p th:text="${time1}"></p>
+
+    <h3>Books</h3>
+    <p th:text="${bookunsorted}"></p>
+
+    <p th:text="${booksorted}"></p>
 
 </div>
 </body>
