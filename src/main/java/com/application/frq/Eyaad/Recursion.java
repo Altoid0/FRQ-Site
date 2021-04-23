@@ -11,6 +11,17 @@ public class Recursion {
         System.out.println(runner.decimalToBinary(7));
         System.out.println(runner.digitSum(1357));
         System.out.println(runner.isPali("racecar"));
+        InsertionSort sort = new InsertionSort();
+        String[] arrray = {"Win", "Loss", "James", "Dog","Cat"};
+        System.out.println(Arrays.toString(sort.sort(arrray)));
+        Book book = new Book("Balls", "Adam");
+        Book book2 = new Book("League", "Eyaad");
+        Book book3 = new PictureBook("Poggers", "Anthony", "James Pellerin");
+        Book[] books = {book2, book3, book};
+        System.out.println(Arrays.toString(sort.sort(books)));
+
+
+
     }
 
     //Factorial recursion

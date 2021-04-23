@@ -69,22 +69,33 @@ public class EyaadController {
         }
 
         @GetMapping("/insertion")
-        public String insertion(@RequestParam(value="length", required = false, defaultValue = "8") int length, Model model) {
+        public String insertion(@RequestParam(value="length", required = false, defaultValue = "8") int length, @RequestParam(value="array", required = false, defaultValue = "[\"Win\", \"Loss\", \"James\", \"Dog\", \"Cat\"]") String array, Model model) {
             long startTime = System.nanoTime();
-            ArrayList<Integer> array = new ArrayList<Integer>();
+            ArrayList<Integer> array1 = new ArrayList<Integer>();
             for (int i = 0; i < length; i++) {
-                array.add((int)(Math.random()*100+1));
+                array1.add((int)(Math.random()*100+1));
             }
-            model.addAttribute("unsorted", "This is the unsorted array randomly generated: " + array.toString());
+            model.addAttribute("unsorted", "This is the unsorted array randomly generated: " + array1.toString());
             //Integer[] arr = (Integer[]) array.toArray();
             Integer[] arr = new Integer[length];
             for (int j = 0; j < length; j++) {
-                arr[j] = array.get(j);
+                arr[j] = array1.get(j);
             }
             InsertionSort insertion = new InsertionSort();
             model.addAttribute("sorted", "This is the array after sorting: " + insertion.returnSort(arr));
             long finalTime = System.nanoTime() - startTime;
             model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
+
+
+            long startTime1 = System.nanoTime();
+            String[] unsorted = array.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s", "").split(",");
+            model.addAttribute("notsorted", "This is the array before sorting: " + array);
+            InsertionSort stringInsertion = new InsertionSort();
+            model.addAttribute("sorted2", "This is the array after sorting: " + insertion.returnSort(unsorted));
+            long finalTime1 = System.nanoTime() - startTime;
+            model.addAttribute("time2", "Time it took: " + finalTime1 + "nanoseconds");
+
+
             return "Eyaad/insertion.html";
         }
 
