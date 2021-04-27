@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 @RequestMapping("/eyaad")
 @Controller
 public class EyaadController {
+        private static ArrayList<Book> bookArray;
         @GetMapping("")
         public String index(){
             return "Eyaad/index.html";
@@ -57,6 +58,7 @@ public class EyaadController {
             }
             if (illustrator == null || illustrator == "") {
                 Book book = new Book(title, author);
+                bookArray.add(book);
                 model.addAttribute("sentence", book);
                 long finalTime = System.nanoTime() - startTime;
                 model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
