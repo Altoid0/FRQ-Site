@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 @RequestMapping("/tanay")
 @Controller
@@ -48,5 +49,41 @@ public class TanayController {
 
         springmodel.addAttribute("cars", sportscar1);
         return "Tanay/inheritance.html";
+    }
+
+    @GetMapping("/linkedlist")
+    public String LinkedExample(@RequestParam(value = "unsortedlist", required = false) String unsortedlist, Model model ) {
+        if (unsortedlist == null) {
+            unsortedlist = " ";
+        }
+        String parsedlist = unsortedlist;
+        String[] items = parsedlist.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s", "").split(",");
+        LinkedList<Integer> mylist = new LinkedList<Integer>();
+        for(int i = 0; i < items.length; i++) {
+            mylist.add(Integer.parseInt(items[i]));
+        }
+        LinkedList<Integer> mylistremovehead = mylist;
+        mylistremovehead.remove();
+
+        LinkedList<Integer> mylistremovemid = mylist;
+        int mid = mylistremovemid.size()/2;
+        mylistremovemid.remove(mid);
+
+        LinkedList<Integer> mylistremovetail = mylist;
+        int tail = mylistremovetail.size() - 1;
+        mylistremovetail.remove(tail);
+
+        LinkedList<Integer> mylistinserthead = mylist;
+        mylistinserthead.add(0,97);
+
+        LinkedList<Integer> mylistinsertlast = mylist;
+        mylistinsertlast.add(97);
+        // make sure this adds to the end
+
+        model.addAttribute("removehead", mylistremovehead);
+        model.addAttribute("removemid", mylistremovemid);
+        model.addAttribute("removetail", mylistremovetail);
+
+        return "Tanay/linkedlist.html";
     }
 }
