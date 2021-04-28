@@ -1,6 +1,7 @@
 package com.application.frq;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.application.frq.Eyaad.InsertionSort;
 import com.application.frq.Eyaad.Recursion;
@@ -16,6 +17,7 @@ import org.springframework.ui.Model;
 @RequestMapping("/eyaad")
 @Controller
 public class EyaadController {
+        private static ArrayList<Book> bookArray;
         @GetMapping("")
         public String index(){
             return "Eyaad/index.html";
@@ -56,6 +58,7 @@ public class EyaadController {
             }
             if (illustrator == null || illustrator == "") {
                 Book book = new Book(title, author);
+                bookArray.add(book);
                 model.addAttribute("sentence", book);
                 long finalTime = System.nanoTime() - startTime;
                 model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
@@ -69,22 +72,42 @@ public class EyaadController {
         }
 
         @GetMapping("/insertion")
-        public String insertion(@RequestParam(value="length", required = false, defaultValue = "8") int length, Model model) {
+        public String insertion(@RequestParam(value="length", required = false, defaultValue = "8") int length, @RequestParam(value="array", required = false, defaultValue = "[\"Win\", \"Loss\", \"James\", \"Dog\", \"Cat\"]") String array, Model model) {
             long startTime = System.nanoTime();
-            ArrayList<Integer> array = new ArrayList<Integer>();
+            ArrayList<Integer> array1 = new ArrayList<Integer>();
             for (int i = 0; i < length; i++) {
-                array.add((int)(Math.random()*100+1));
+                array1.add((int)(Math.random()*100+1));
             }
-            model.addAttribute("unsorted", "This is the unsorted array randomly generated: " + array.toString());
+            model.addAttribute("unsorted", "This is the unsorted array randomly generated: " + array1.toString());
             //Integer[] arr = (Integer[]) array.toArray();
             Integer[] arr = new Integer[length];
             for (int j = 0; j < length; j++) {
-                arr[j] = array.get(j);
+                arr[j] = array1.get(j);
             }
             InsertionSort insertion = new InsertionSort();
             model.addAttribute("sorted", "This is the array after sorting: " + insertion.returnSort(arr));
             long finalTime = System.nanoTime() - startTime;
             model.addAttribute("time", "Time it took: " + finalTime + " nanoseconds");
+
+
+            long startTime1 = System.nanoTime();
+            String[] unsorted = array.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s", "").split(",");
+            model.addAttribute("notsorted", "This is the array before sorting: " + array);
+            InsertionSort stringInsertion = new InsertionSort();
+            model.addAttribute("sorted2", "This is the array after sorting: " + stringInsertion.returnSort(unsorted));
+            long finalTime1 = System.nanoTime() - startTime1;
+            model.addAttribute("time1", "Time it took: " + finalTime1 + " nanoseconds");
+
+            Book book = new Book("Record of Ragnarok", "Allen");
+            Book book2 = new Book("League of legends guide", "Eyaad");
+            Book book3 = new PictureBook("Last Game", "Anthony", "James Pellerin");
+            Book[] books = {book, book2, book3};
+
+            model.addAttribute("bookunsorted", "This is the array before sorting: " + Arrays.toString(books));
+            InsertionSort bookInsertion = new InsertionSort();
+            model.addAttribute("booksorted", "This is the array after sorting " + Arrays.toString(bookInsertion.sort(books)));
+
+
             return "Eyaad/insertion.html";
         }
 

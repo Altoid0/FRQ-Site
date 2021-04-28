@@ -4,13 +4,30 @@ import java.util.Arrays;
 public class Recursion {
     //main function
     public static void main(String[] args) {
-        Recursion runner = new Recursion();
+        /*Recursion runner = new Recursion();
         System.out.println(runner.returnFact(5));
         System.out.println(runner.fact(5));
         System.out.println(runner.gcf(24,9));
         System.out.println(runner.decimalToBinary(7));
         System.out.println(runner.digitSum(1357));
         System.out.println(runner.isPali("racecar"));
+        InsertionSort sort = new InsertionSort();
+        String[] arrray = {"Win", "Loss", "James", "Dog","Cat"};
+        System.out.println(Arrays.toString(sort.sort(arrray)));
+        Book book = new Book("Balls", "Adam");
+        Book book2 = new Book("League", "Eyaad");
+        Book book3 = new PictureBook("Poggers", "Anthony", "James Pellerin");
+        Book[] books = {book2, book3, book};
+        System.out.println(Arrays.toString(sort.sort(books)));*/
+
+
+        Book book1 = new Book("League of Legends Guide", "Eyaad Mir");
+        Book book2 = new PictureBook("Diary of a Wimpy Kid", "Jeff Kinney", "Jeff Kinney");
+        System.out.println(book1);
+        System.out.println(book2);
+
+
+
     }
 
     //Factorial recursion

@@ -63,8 +63,20 @@ public class MultiSort<T> {
         return arr;
     }
 
+    public <T extends Comparable<T>> T[] swap(T[] arr, int a, int b){
+        T temp = arr[b];
+        arr[b] = arr[a];
+        arr[a] = temp;
+        return arr;
+    }
+
 
     public static void main(String[] args) {
+
+//        for (int n = 0; n < 7; n += 2){
+//            System.out.println(n);
+//        }
+
         String[] strings = new String[]{"nathan", "apple", "classroom", "hat", "cat"};
         MultiSort<String> ms = new MultiSort<>();
         System.out.println(Arrays.toString(ms.insertionSort(strings)));
