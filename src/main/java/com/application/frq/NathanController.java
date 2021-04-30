@@ -1,9 +1,6 @@
 package com.application.frq;
 
-import com.application.frq.Nathan.Inheritance;
-import com.application.frq.Nathan.Insertion;
-import com.application.frq.Nathan.MultiSort;
-import com.application.frq.Nathan.Recursion;
+import com.application.frq.Nathan.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -175,14 +172,22 @@ public class NathanController {
     }
 
 
+    @GetMapping("/linked-list")
+    public String linkedList(Model model){
+        LinkedList l = new LinkedList();
+        l.addHead(new LinkedList.Item(1));
+        l.addHead(new LinkedList.Item(2));
+        l.addHead(new LinkedList.Item(3));
+
+        model.addAttribute("items", l.toList());
+        return "Nathan/linked-list.html";
+    }
+
+
     @GetMapping("/tpt-lesson")
     public String tptlesson(){
         return "Nathan/tpt-lesson";
     }
-
-
-
-
     private static String[] words = new String[]{"variable", "rumor", "robin", "examination", "comfort", "metro", "feather", "down", "understanding", "diadem", "shirtdress", "situation", "ikebana", "cappelletti", "stock-in-trade", "store", "gosling", "tobacco", "newsprint", "ingredient", "range", "collector", "southeast", "scaffold", "mask", "well", "boom", "enthusiasm", "consciousness", "association", "facility", "modernist", "walkway", "chandelier", "adrenalin", "ballpark", "achievement", "order", "tummy", "thread", "south", "grandfather", "licorice", "softening", "viewer", "circumference", "beech", "courage", "estrogen", "creme brulee", "evening", "throat", "conversion", "patent", "everything", "harpsichord", "completion", "motor", "celery", "reservation", "crewmember", "repeat", "regulator", "kendo", "cooking", "ordination", "innocent", "residence", "briefing", "convenience", "grain", "widget", "rebellion", "smog", "butler", "lady", "bride", "raven", "parliament", "sir", "merchandise", "iron", "beret", "pinto", "flintlock", "evidence", "lumber", "futon", "developing", "dollop", "goose", "chinchilla", "landscape", "ton", "flame", "television", "venture", "schnitzel", "preparation", "wardrobe"};
     private static String getRandomWord(){
         return words[(int)(Math.random()* words.length)];

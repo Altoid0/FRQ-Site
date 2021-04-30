@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedList | Nathan </title>
+</head>
+<body>
+
+    <h1>Linked Lists</h1>
+
+    <tr th:each="item: ${items}">
+        <td th:text="${item}" />
+        <td th:text="${item.getValue()}" />
+    </tr>
+</body>
+</html>

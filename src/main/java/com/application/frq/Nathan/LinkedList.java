@@ -1,8 +1,11 @@
 package com.application.frq.Nathan;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LinkedList {
 
-    static class Item {
+    public static class Item {
         Item next;
         private int value;
         public Item(int val){
@@ -69,6 +72,16 @@ public class LinkedList {
         return last;
     }
 
+    public List<Item> toList(){
+        ArrayList<Item> items = new ArrayList<>();
+        if(head == null) return items;
+        Item temp = head;
+        while (temp.next != null){
+            items.add(temp);
+            temp = temp.next;
+        }
+        return items;
+    }
 
     @Override
     public String toString() {
@@ -82,6 +95,7 @@ public class LinkedList {
         //String sup = super.toString();
         //return sup.substring(27);
     }
+
 
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
@@ -97,6 +111,7 @@ public class LinkedList {
         System.out.println(l);
         l.removeLast();
         System.out.println(l);
+
 
 
         //System.out.println(l.getLast());
