@@ -1,14 +1,12 @@
 package com.application.frq.Dhruv;
 
-import ch.qos.logback.core.subst.Node;
-import com.sun.xml.bind.v2.model.annotation.Quick;
 
-public class QuickSortLinkedList<node> {
+public class QuickSortLinkedList {
 
     static class Node {
         int value;
         Node next;
-        public Node(int v) {
+        Node(int v) {
             this.value = v;
             this.next = null;
         }
@@ -22,9 +20,9 @@ public class QuickSortLinkedList<node> {
         }
         Node current = head;
 
-        while(current.next != null)
+        while(current.next != null) {
             current = current.next;
-
+        }
         Node newNode = new Node(value);
         current.next = newNode;
 
@@ -33,7 +31,7 @@ public class QuickSortLinkedList<node> {
     void printList(Node n) {
         while(n != null){
             System.out.print(n.value);
-            System.out.print("");
+            System.out.print(" ");
             n = n.next;
         }
     }
@@ -44,10 +42,10 @@ public class QuickSortLinkedList<node> {
     Node paritionLast(Node start, Node end)
     {
         if(start == end ||
-                start == null || end == null)
+                start == null || end == null) {
 
             return start;
-
+        }
         Node pivot_prev = start;
         Node curr = start;
         int pivot = end.value;
@@ -83,9 +81,9 @@ public class QuickSortLinkedList<node> {
 
     void sort(Node start, Node end)
     {
-        if(start == end )
+        if(start == end ) {
             return;
-
+        }
         // split list and partion recurse
         Node pivot_prev = paritionLast(start, end);
 
@@ -95,15 +93,16 @@ public class QuickSortLinkedList<node> {
         // that means start and pivot is same
         // so pick from next of pivot
         if( pivot_prev != null &&
-                pivot_prev == start )
+                pivot_prev == start ) {
             sort(pivot_prev.next, end);
-
+        }
             // if pivot is in between of the list,
             // start from next of pivot,
             // since we have pivot_prev, so we move two nodes
         else if(pivot_prev != null &&
-                pivot_prev.next != null)
+                pivot_prev.next != null) {
             sort(pivot_prev.next.next, end);
+        }
     }
 
     public static void main(String[] args) {
@@ -116,8 +115,7 @@ public class QuickSortLinkedList<node> {
         testlist.addNode(9);
         testlist.addNode(54);
         testlist.addNode(27);
-        testlist.addNode(1);
-        testlist.addNode(89);
+
 
         Node n = testlist.head;
         while(n.next != null){
@@ -129,7 +127,7 @@ public class QuickSortLinkedList<node> {
 
         testlist.sort(testlist.head, n);
 
-        System.out.println("Sorted List: ");
+        System.out.println("\nSorted List: ");
         testlist.printList(testlist.head);
     }
 }
