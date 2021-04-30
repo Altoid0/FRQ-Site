@@ -1,15 +1,15 @@
 package com.application.frq;
 
-import com.application.frq.Nathan.Inheritance;
-import com.application.frq.Nathan.Insertion;
-import com.application.frq.Nathan.MultiSort;
-import com.application.frq.Nathan.Recursion;
+import com.application.frq.Nathan.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -129,6 +129,7 @@ public class NathanController {
 
         System.out.println(String.format("sortType %s, dataType %s", sortType, dataType));
 
+
         if(sortType != null && dataType != null){
             MultiSort ms;
             if(dataType.equals("string")){
@@ -174,15 +175,45 @@ public class NathanController {
         return "Nathan/multi-sort";
     }
 
+    LinkedList l = new LinkedList(new int[]{10,40,2});
 
-    @GetMapping("/tpt-lesson")
-    public String tptlesson(){
-        return "Nathan/tpt-lesson";
+    @GetMapping("/linked-list")
+    public String linkedList(@RequestParam(value = "addHead", required = false) Integer addHead,
+                             @RequestParam(value = "addTail", required = false) Integer addTail,
+                             @RequestParam(value = "remHead", required = false) Boolean remHead,
+                             @RequestParam(value = "remTail", required = false) Boolean remTail, Model model){
+
+        if(addHead != null){
+            l.addHead(new LinkedList.Item(addHead.intValue()));
+            return "Nathan/linked-list.html";
+        }
+
+        if(addTail != null){
+            l.addTail(new LinkedList.Item(addTail.intValue()));
+            return "Nathan/linked-list.html";
+        }
+
+        if(remHead != null){
+            l.removeFirst();
+            return "Nathan/linked-list.html";
+        }
+
+        if(remTail != null){
+            l.removeLast();
+            return "Nathan/linked-list.html";
+        }
+
+        model.addAttribute("linkedList", l);
+        return "Nathan/linked-list.html";
     }
 
 
 
 
+    @GetMapping("/tpt-lesson")
+    public String tptlesson(){
+        return "Nathan/tpt-lesson";
+    }
     private static String[] words = new String[]{"variable", "rumor", "robin", "examination", "comfort", "metro", "feather", "down", "understanding", "diadem", "shirtdress", "situation", "ikebana", "cappelletti", "stock-in-trade", "store", "gosling", "tobacco", "newsprint", "ingredient", "range", "collector", "southeast", "scaffold", "mask", "well", "boom", "enthusiasm", "consciousness", "association", "facility", "modernist", "walkway", "chandelier", "adrenalin", "ballpark", "achievement", "order", "tummy", "thread", "south", "grandfather", "licorice", "softening", "viewer", "circumference", "beech", "courage", "estrogen", "creme brulee", "evening", "throat", "conversion", "patent", "everything", "harpsichord", "completion", "motor", "celery", "reservation", "crewmember", "repeat", "regulator", "kendo", "cooking", "ordination", "innocent", "residence", "briefing", "convenience", "grain", "widget", "rebellion", "smog", "butler", "lady", "bride", "raven", "parliament", "sir", "merchandise", "iron", "beret", "pinto", "flintlock", "evidence", "lumber", "futon", "developing", "dollop", "goose", "chinchilla", "landscape", "ton", "flame", "television", "venture", "schnitzel", "preparation", "wardrobe"};
     private static String getRandomWord(){
         return words[(int)(Math.random()* words.length)];

@@ -1,8 +1,21 @@
 package com.application.frq.Nathan;
 
-public class LinkedList {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
-    static class Item {
+public class LinkedList implements Iterable<LinkedList.Item> {
+
+    public LinkedList(){}
+    public LinkedList(int[] arr){
+        for(int a: arr){
+            addHead(new Item(a));
+        }
+    }
+
+    public static class Item {
         Item next;
         private int value;
         public Item(int val){
@@ -69,6 +82,17 @@ public class LinkedList {
         return last;
     }
 
+    public List<Item> toList(){
+        ArrayList<Item> items = new ArrayList<>();
+        if(head == null) return items;
+        Item temp = head;
+        while (temp.next != null){
+            items.add(temp);
+            temp = temp.next;
+        }
+        return items;
+    }
+
 
     @Override
     public String toString() {
@@ -82,6 +106,30 @@ public class LinkedList {
         //String sup = super.toString();
         //return sup.substring(27);
     }
+
+    @Override
+    public Iterator<Item> iterator() {
+
+        return new Iterator<Item>() {
+
+            Item temp = head;
+
+            @Override
+            public boolean hasNext() {
+                //System.out.println("TE: " + temp);
+                //if(temp == null) return false;
+                return temp != null;
+            }
+
+            @Override
+            public Item next() {
+                Item t = temp;
+                temp = temp.next;
+                return t;
+            }
+        };
+    }
+
 
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
@@ -98,6 +146,9 @@ public class LinkedList {
         l.removeLast();
         System.out.println(l);
 
+        for(Item i: l){
+            System.out.println(i);
+        }
 
         //System.out.println(l.getLast());
         //System.out.println(l.getClass());
