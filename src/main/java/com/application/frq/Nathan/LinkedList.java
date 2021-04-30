@@ -82,6 +82,11 @@ public class LinkedList implements Iterable<LinkedList.Item> {
 
     public Item removeLast(){
         if(head == null) return null;
+        if(head.next == null) {
+            Item t = head;
+            head = null;
+            return t;
+        }
         Item last = head;
         Item secondToLast = null;
         while (last.next != null){
