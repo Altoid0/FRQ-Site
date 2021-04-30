@@ -27,10 +27,20 @@ public class LinkedList implements Iterable<LinkedList.Item> {
             return value;
         }
 
+        public String getNextNode(){
+            if(next == null) return "null";
+            return next.getMem();
+        }
+
+        public String getMem(){
+            return super.toString().substring(38);
+        }
+
         @Override
         public String toString() {
             return "Item{" +
                     "value=" + value +
+                    "mem=" + getMem() +
                     '}';
         }
     }
