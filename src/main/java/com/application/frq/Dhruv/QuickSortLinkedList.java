@@ -1,19 +1,23 @@
 package com.application.frq.Dhruv;
 
 
+import org.thymeleaf.util.ArrayUtils;
+
+import java.util.ArrayList;
+
 public class QuickSortLinkedList {
 
-    static class Node {
+    public static class Node {
+        public Node next;
         int value;
-        Node next;
         Node(int v) {
             this.value = v;
             this.next = null;
         }
     }
-    Node head;
+    public Node head;
 
-    void addNode(int value){
+    public void addNode(int value){
         if (head == null){
             head = new Node(value);
             return;
@@ -28,12 +32,14 @@ public class QuickSortLinkedList {
 
     }
 
-    void printList(Node n) {
+    public Object[] printList(Node n) {
+        ArrayList<Integer> arr = new ArrayList<Integer>();
         while(n != null){
-            System.out.print(n.value);
-            System.out.print(" ");
+            arr.add(n.value);
             n = n.next;
         }
+        Object[] convarr = arr.toArray();
+        return convarr;
     }
 
     // takes first and last node,
@@ -79,7 +85,7 @@ public class QuickSortLinkedList {
         return pivot_prev;
     }
 
-    void sort(Node start, Node end)
+    public void sort(Node start, Node end)
     {
         if(start == end ) {
             return;
