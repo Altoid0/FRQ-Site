@@ -126,6 +126,7 @@ public class NathanController {
 
         System.out.println(String.format("sortType %s, dataType %s", sortType, dataType));
 
+
         if(sortType != null && dataType != null){
             MultiSort ms;
             if(dataType.equals("string")){
