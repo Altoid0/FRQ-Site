@@ -4,9 +4,12 @@ import com.application.frq.Nathan.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -172,17 +175,39 @@ public class NathanController {
         return "Nathan/multi-sort";
     }
 
+    LinkedList l = new LinkedList(new int[]{10,40,2});
 
     @GetMapping("/linked-list")
-    public String linkedList(Model model){
-        LinkedList l = new LinkedList();
-        l.addHead(new LinkedList.Item(1));
-        l.addHead(new LinkedList.Item(2));
-        l.addHead(new LinkedList.Item(3));
+    public String linkedList(@RequestParam(value = "addHead", required = false) Integer addHead,
+                             @RequestParam(value = "addTail", required = false) Integer addTail,
+                             @RequestParam(value = "remHead", required = false) Boolean remHead,
+                             @RequestParam(value = "remTail", required = false) Boolean remTail, Model model){
 
-        model.addAttribute("items", l.toList());
+        if(addHead != null){
+            l.addHead(new LinkedList.Item(addHead.intValue()));
+            return "Nathan/linked-list.html";
+        }
+
+        if(addTail != null){
+            l.addTail(new LinkedList.Item(addTail.intValue()));
+            return "Nathan/linked-list.html";
+        }
+
+        if(remHead != null){
+            l.removeFirst();
+            return "Nathan/linked-list.html";
+        }
+
+        if(remTail != null){
+            l.removeLast();
+            return "Nathan/linked-list.html";
+        }
+
+        model.addAttribute("linkedList", l);
         return "Nathan/linked-list.html";
     }
+
+
 
 
     @GetMapping("/tpt-lesson")
