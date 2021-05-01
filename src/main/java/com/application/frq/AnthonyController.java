@@ -143,7 +143,7 @@ public class AnthonyController {
         if (mode == null)
             mode = 1;
 
-        for (int i = 10; i > 0; i--) {
+        for (int i = 0; i < 10; i++) {
             a.add(i);
             l = LinkedList.addLast(l, i);
         }
