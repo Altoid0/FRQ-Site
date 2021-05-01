@@ -7,6 +7,7 @@ import com.application.frq.Eyaad.InsertionSort;
 import com.application.frq.Eyaad.Recursion;
 import com.application.frq.Eyaad.Book;
 import com.application.frq.Eyaad.PictureBook;
+import com.application.frq.Eyaad.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,24 @@ import org.springframework.ui.Model;
 @Controller
 public class EyaadController {
         private static ArrayList<Book> bookArray;
+        private static int[] linkedArray = {4, 8, 3, 2, 5};
+
+        public ArrayList<Integer> toArrayList(int[] arr) {
+            ArrayList<Integer> nums = new ArrayList<>();
+            for (int a : arr) {
+                nums.add(a);
+            }
+            return nums;
+        }
+
+        public int[] toArray(ArrayList<Integer> arr) {
+            int[] array = new int[arr.size()];
+            for (int i = 0; i < arr.size(); i++) {
+                array[i] = arr.get(i);
+            }
+            return array;
+        }
+
         @GetMapping("")
         public String index(){
             return "Eyaad/index.html";
@@ -109,6 +128,33 @@ public class EyaadController {
 
 
             return "Eyaad/insertion.html";
+        }
+
+        @GetMapping("/linkedlist")
+        public String linkedList(@RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2, @RequestParam(value = "num3", required = false) Integer num3, @RequestParam(value = "headdel", required = false, defaultValue = "no") String headdel, @RequestParam(value = "taildel", required = false, defaultValue = "no") String taildel, @RequestParam(value = "middledel", required = false, defaultValue = "no") String middledel, Model model) {
+            ArrayList<Integer> numbers = toArrayList(linkedArray);
+            if (num1 != null) {
+                numbers.add(0, num1);
+            }
+            if (num2 != null) {
+                numbers.add(num2);
+            }
+            if (num3 != null) {
+                numbers.add(numbers.size() / 2, num3);
+            }
+            if (headdel.equals("yes")) {
+                numbers.remove(0);
+            }
+            if (taildel.equals("yes")) {
+                numbers.remove(numbers.size() - 1);
+            }
+            if (middledel.equals("yes")) {
+                numbers.remove(numbers.size() / 2);
+            }
+            linkedArray = toArray(numbers);
+            LinkedList list = new LinkedList(linkedArray);
+            model.addAttribute("list", list);
+            return "Eyaad/linkedlist.html";
         }
 
        /* @GetMapping("/fac")
