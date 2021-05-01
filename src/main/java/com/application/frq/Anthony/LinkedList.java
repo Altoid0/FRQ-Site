@@ -76,9 +76,10 @@ public class LinkedList {
         int counter = 0;
         //if changing stuff inside the linked list
         while (currNode != null) {
-            System.out.println(currNode.data);
+            System.out.println(counter);
             if (counter == position) {
                 prev.next = currNode.next;
+                return l;
             }
             else {
                 prev = currNode;
@@ -103,4 +104,18 @@ public class LinkedList {
         return s;
     }
 
+    /*public static LinkedList bubbleSort (LinkedList l) {
+        for (int j = 0; j < 1; j++) {
+            for (int i = 0; i < 9; i++) {
+                if (array[i].compareTo(array[i + 1]) > 0) {
+                    T temp = array[i + 1];
+                    array[i + 1] = array[i];
+                    array[i] = temp;
+                    j--;
+                }
+            }
+        }
+
+        return l;
+    }*/
 }

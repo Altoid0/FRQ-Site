@@ -143,7 +143,7 @@ public class AnthonyController {
         if (mode == null)
             mode = 1;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 10; i > 0; i--) {
             a.add(i);
             l = LinkedList.addLast(l, i);
         }
@@ -158,9 +158,9 @@ public class AnthonyController {
         long startTimeL = System.nanoTime();
         if (mode == 1) {
             l = LinkedList.addNode(l, number, index);
-        } /*else {
+        } else {
             l = LinkedList.deleteNode(l, index);
-        }*/
+        }
         long finalTimeL = System.nanoTime() - startTimeL;
         System.out.println("linked lists done");
 
