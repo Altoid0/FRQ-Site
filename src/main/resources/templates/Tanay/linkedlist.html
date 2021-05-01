@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form th:action="@{/tanay/linkedlist}">
+    <p>Enter an array of numbers encased in square brackets and separated by commas ex. [2,9,123,46,17,56,63]</p>
+    <label for="length">Array</label>
+    <input type="text" id="length" th:name="unsortedlist" th:value="${unsortedlist}">
+  </form>
+
+  <p>Unsorted LinkedList</p>
+  <p th:text="${unsorted}"></p>
+
+  <p>Head removed LinkedList</p>
+  <p th:text="${removehead}"></p>
+
+  <p>Middle removed LinkedList</p>
+  <p th:text="${removemid}"></p>
+
+  <p>Tail removed LinkedList</p>
+  <p th:text="${removetail}"></p>
+
+  <p>Head inserted LinkedList</p>
+  <p th:text="${addhead}"></p>
+
+  <p>Middle inserted LinkedList</p>
+  <p th:text="${addmid}"></p>
+
+  <p>Tail inserted LinkedList</p>
+  <p th:text="${addtail}"></p>
+
+  <p>Sorted LinkedList</p>
+  <p th:text="${sort}"></p>
+</body>
+</html>

@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 @RequestMapping("/tanay")
 @Controller
@@ -62,27 +61,38 @@ public class TanayController {
         for(int i = 0; i < items.length; i++) {
             mylist.add(Integer.parseInt(items[i]));
         }
-        LinkedList<Integer> mylistremovehead = mylist;
+        LinkedList<Integer> mylistremovehead = new LinkedList<>(mylist);
         mylistremovehead.remove();
 
-        LinkedList<Integer> mylistremovemid = mylist;
+        LinkedList<Integer> mylistremovemid = new LinkedList<>(mylist);
         int mid = mylistremovemid.size()/2;
         mylistremovemid.remove(mid);
 
-        LinkedList<Integer> mylistremovetail = mylist;
+        LinkedList<Integer> mylistremovetail = new LinkedList<>(mylist);
         int tail = mylistremovetail.size() - 1;
         mylistremovetail.remove(tail);
 
-        LinkedList<Integer> mylistinserthead = mylist;
+        LinkedList<Integer> mylistinserthead = new LinkedList<>(mylist);
         mylistinserthead.add(0,97);
 
-        LinkedList<Integer> mylistinsertlast = mylist;
-        mylistinsertlast.add(97);
+        LinkedList<Integer> mylistinsertmid = new LinkedList<>(mylist);
+        mylistinsertmid.add(mid, 97);
+
+        LinkedList<Integer> mylistinsertail = new LinkedList<>(mylist);
+        mylistinsertail.add(97);
         // make sure this adds to the end
 
+        List<Integer> mylistsorted = new LinkedList<>(mylist);
+        mylistsorted = mylistsorted.sort(Comparator.);
+        Collections.sort(mylist);
+
+        model.addAttribute("unsorted", parsedlist); //check maybe try parsedlist
         model.addAttribute("removehead", mylistremovehead);
         model.addAttribute("removemid", mylistremovemid);
         model.addAttribute("removetail", mylistremovetail);
+        model.addAttribute("addhead", mylistinserthead);
+        model.addAttribute("addmid", mylistinsertmid);
+        model.addAttribute("addtail", mylistinsertail);
 
         return "Tanay/linkedlist.html";
     }
