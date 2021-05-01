@@ -11,28 +11,28 @@
     <input type="text" id="length" th:name="unsortedlist" th:value="${unsortedlist}">
   </form>
 
-  <p>Unsorted LinkedList</p>
+  <p>Unsorted original LinkedList</p>
   <p th:text="${unsorted}"></p>
 
-  <p>Head removed LinkedList</p>
+  <p>Head removed first element in LinkedList</p>
   <p th:text="${removehead}"></p>
 
-  <p>Middle removed LinkedList</p>
+  <p>Middle removed middle element in LinkedList</p>
   <p th:text="${removemid}"></p>
 
-  <p>Tail removed LinkedList</p>
+  <p>Tail removed last element in LinkedList</p>
   <p th:text="${removetail}"></p>
 
-  <p>Head inserted LinkedList</p>
+  <p>Head inserted 97 at the front of LinkedList</p>
   <p th:text="${addhead}"></p>
 
-  <p>Middle inserted LinkedList</p>
+  <p>Middle inserted 97 into the middle of LinkedList</p>
   <p th:text="${addmid}"></p>
 
-  <p>Tail inserted LinkedList</p>
+  <p>Tail inserted 97 at the end of LinkedList</p>
   <p th:text="${addtail}"></p>
 
-  <p>Sorted LinkedList</p>
-  <p th:text="${sort}"></p>
+  <p>Sorted LinkedList with merge sort: O(nlogn)</p>
+  <p th:text="${sorted}"></p>
 </body>
 </html>

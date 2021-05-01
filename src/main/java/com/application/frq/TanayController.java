@@ -51,7 +51,7 @@ public class TanayController {
     }
 
     @GetMapping("/linkedlist")
-    public String LinkedExample(@RequestParam(value = "unsortedlist", required = false) String unsortedlist, Model model ) {
+    public String LinkedExample(@RequestParam(value = "unsortedlist", required = false, defaultValue = "[2,9,123,46,17,56,63]") String unsortedlist, Model model ) {
         if (unsortedlist == null) {
             unsortedlist = " ";
         }
@@ -82,17 +82,17 @@ public class TanayController {
         mylistinsertail.add(97);
         // make sure this adds to the end
 
-        List<Integer> mylistsorted = new LinkedList<>(mylist);
-        mylistsorted = mylistsorted.sort(Comparator.);
-        Collections.sort(mylist);
+        LinkedList<Integer> mylistsorted = new LinkedList<>(mylist);
+        Collections.sort(mylistsorted);
 
-        model.addAttribute("unsorted", parsedlist); //check maybe try parsedlist
+        model.addAttribute("unsorted", parsedlist);
         model.addAttribute("removehead", mylistremovehead);
         model.addAttribute("removemid", mylistremovemid);
         model.addAttribute("removetail", mylistremovetail);
         model.addAttribute("addhead", mylistinserthead);
         model.addAttribute("addmid", mylistinsertmid);
         model.addAttribute("addtail", mylistinsertail);
+        model.addAttribute("sorted", mylistsorted);
 
         return "Tanay/linkedlist.html";
     }
