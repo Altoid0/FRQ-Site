@@ -3,12 +3,15 @@ package com.application.frq;
 import com.application.frq.Anthony.Recursion;
 import com.application.frq.Anthony.Insertion;
 import com.application.frq.Anthony.Sorts;
+import com.application.frq.Anthony.LinkedList;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
 
 @RequestMapping("/anthony")
 @Controller
@@ -124,6 +127,56 @@ public class AnthonyController {
         model.addAttribute("time", "Time taken: " + endTime + " nanoseconds");
 
         return "Anthony/sorts.html";
+    }
+
+    @GetMapping("/linkedlist")
+    public String linkedlist(@RequestParam(value = "index", required = false) Integer index,
+                            @RequestParam(value = "number", required = false) Integer number,
+                            @RequestParam(value = "mode", required = false) Integer mode,Model model){
+        LinkedList l = new LinkedList();
+        ArrayList<Integer> a = new ArrayList<Integer>();
+
+        if (index == null)
+            index = 5;
+        if (number == null)
+            number = 99;
+        if (mode == null)
+            mode = 1;
+
+        for (int i = 0; i < 10; i++) {
+            a.add(i);
+            l = LinkedList.addLast(l, i);
+        }
+
+        long startTimeA = System.nanoTime();
+        if (mode == 1) {
+            a.add(index, number);
+        } else {
+            a.remove(index);
+        }
+        long finalTimeA = System.nanoTime() - startTimeA;
+        long startTimeL = System.nanoTime();
+        if (mode == 1) {
+            l = LinkedList.addNode(l, number, index);
+        } /*else {
+            l = LinkedList.deleteNode(l, index);
+        }*/
+        long finalTimeL = System.nanoTime() - startTimeL;
+        System.out.println("linked lists done");
+
+        String s = "{";
+        for (int i = 0; i < a.size()-1; i++) {
+            s += a.get(i) + ", ";
+        }
+        s += a.get(a.size()-1) + "}";
+
+        model.addAttribute("arrayList", "Final ArrayList: " + s);
+        System.out.println("arrayList attribute???");
+        model.addAttribute("linkedList", "Final Linked List: " + LinkedList.listString(l));
+        model.addAttribute("time", "It took " + finalTimeA + " seconds for the ArrayList to change itself while it took " + finalTimeL + " seconds for the Linked List to change itself");
+        System.out.println("attributes???");
+
+        return "Anthony/linkedlist.html";
     }
 
 }
