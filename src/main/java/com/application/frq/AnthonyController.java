@@ -1,9 +1,6 @@
 package com.application.frq;
 
-import com.application.frq.Anthony.Recursion;
-import com.application.frq.Anthony.Insertion;
-import com.application.frq.Anthony.Sorts;
-import com.application.frq.Anthony.LinkedList;
+import com.application.frq.Anthony.*;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -162,7 +159,6 @@ public class AnthonyController {
             l = LinkedList.deleteNode(l, index);
         }
         long finalTimeL = System.nanoTime() - startTimeL;
-        System.out.println("linked lists done");
 
         String s = "{";
         for (int i = 0; i < a.size()-1; i++) {
@@ -171,12 +167,29 @@ public class AnthonyController {
         s += a.get(a.size()-1) + "}";
 
         model.addAttribute("arrayList", "Final ArrayList: " + s);
-        System.out.println("arrayList attribute???");
         model.addAttribute("linkedList", "Final Linked List: " + LinkedList.listString(l));
         model.addAttribute("time", "It took " + finalTimeA + " seconds for the ArrayList to change itself while it took " + finalTimeL + " seconds for the Linked List to change itself");
-        System.out.println("attributes???");
 
         return "Anthony/linkedlist.html";
     }
 
+
+    @GetMapping("/recursionlesson")
+    public String recursionlesson(@RequestParam(value = "size", required = false) Integer size, Model model){
+        GuidedRecursion r = new GuidedRecursion();
+
+        if (size == null) {
+            size = 5;
+        }
+
+        long startTime = System.nanoTime();
+        int result = r.fib(size);
+        long finalTime = System.nanoTime() - startTime;
+
+        model.addAttribute("process", r.dumpLog());
+        model.addAttribute("answer", "The " + size + "th term of the Fibonacci sequence is " + result);
+        model.addAttribute("time", "Time: " + finalTime + " nanoseconds");
+
+        return "Anthony/recursionlesson.html";
+    }
 }
