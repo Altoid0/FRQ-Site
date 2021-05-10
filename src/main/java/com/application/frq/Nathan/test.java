@@ -1,6 +1,7 @@
 package com.application.frq.Nathan;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class test {
@@ -12,7 +13,15 @@ public class test {
             return "fi";
         }
         public Fish(){
-             System.out.println("Fish Contstructed");
+             construct();
+        }
+
+        private void construct(){
+            System.out.println("Fish Contstructed");
+        }
+
+        public void swim(){
+
         }
     }
 
@@ -25,11 +34,15 @@ public class test {
 
         public Shark(){
              int d = 3;
-             System.out.println("Shark Constructed");
+             System.out.println("Shark Constructed LOL");
         }
 
-        public Shark(int m){
+        private void construct(){
+            System.out.println("SHARK Contstructed");
+        }
 
+        public void chomp(){
+             swim();
         }
     }
 
@@ -51,10 +64,38 @@ public class test {
 //        Shark shark1 = new Shark();
 //        System.out.println(fish.type() + " " + shark.type() + " " + shark1.type());
 
+        Shark s = new Shark();
+        s.chomp();
+
+        Fish[] things = new Shark[4];
+        //things[0] = new Fish();
+        things[1] = new Shark();
+        things[2] = shark;
+
         int[] arr = new int[]{1,2,3,4,5};
         System.out.println(Arrays.toString(arr));
         changeIt(arr);
         System.out.println(Arrays.toString(arr));
+
+        ArrayList<String> d = new ArrayList();
+        d.add("sdf");
+
+
+        ArrayList<Integer> integerArrayList = new ArrayList<>();
+        Integer in = 2;
+
+        System.out.println();
+
+        int[] ar2 = {1,2,3};
+
+        ArrayList<String> arrList = new ArrayList<String>();
+        arrList.add("A");
+        arrList.add("B");
+        arrList.add("C");
+        arrList.add("D");
+        for (int i = 0; i < arrList.size(); i++) {
+            System.out.print(arrList.remove(i));
+        }
 
     }
 }
