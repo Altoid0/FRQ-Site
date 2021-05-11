@@ -1,5 +1,7 @@
 package com.application.frq.Nathan;
 
+import java.util.ArrayList;
+
 public class MoTest {
 
     static class Aclass {
@@ -50,8 +52,24 @@ static class Bclass extends Aclass {
 
 }
 
+
     public static void main(String[] args) {
-        new Bclass();
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("hello");
+        strings.add("there");
+        strings.add("hello");
+        strings.add("there");
+        strings.add("there");
+
+        for(int i=0;i<strings.size();i++){
+            String s = strings.get(i);
+            if(s.equals("hello")){
+                strings.remove(i);
+                i -= 1;
+            }
+        }
+
+        System.out.println(strings);
     }
 
 }

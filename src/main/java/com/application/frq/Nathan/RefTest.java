@@ -14,9 +14,14 @@ public class RefTest {
         public void setName(String name) {
             this.name = name;
         }
+
+        public static void fo(){}
     }
 
     public static void main(String[] args) {
+
+        System.out.println(po("FAMILY"));
+
         Dog dm = new Dog();
         dm.setName("little dog");
         System.out.println(dm.getName());
@@ -44,6 +49,12 @@ public class RefTest {
     static void foo(String s){
         String[] d = new String[0];
     }
+
+    static String po(String s){
+        if(s.length() < 1) return "";
+        return po(s.substring(1)) + s.substring(0,1);
+    }
+
 
 
 }
