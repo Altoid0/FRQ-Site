@@ -6,6 +6,9 @@ public class MoTest {
 
     static class Aclass {
 
+        public Aclass(){
+            Aclass a = new Aclass();
+        }
         public void methodX()
 
         {
@@ -53,7 +56,32 @@ static class Bclass extends Aclass {
 }
 
 
+    static class A{
+        private void m(){
+            System.out.println("A");
+        }
+    }
+
+    static class B extends A{
+        void m(){
+            System.out.println("B");
+        }
+    }
+
     public static void main(String[] args) {
+        //new Aclass();
+
+        A aIsA = new A();
+        A aIsB = new B();
+        B bIsB = new B();
+        System.out.println(aIsA + " " + aIsB + " " + bIsB);
+        aIsA.m();
+        aIsB.m();
+        bIsB.m();
+
+        int m = new Integer(5);
+
+        Runtime r = Runtime.getRuntime();
         ArrayList<String> strings = new ArrayList<>();
         strings.add("hello");
         strings.add("there");

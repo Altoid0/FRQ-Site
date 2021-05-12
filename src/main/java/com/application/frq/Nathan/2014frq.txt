@@ -15,6 +15,7 @@ private String[] mixedWOrds(String[] words){
     return mWords;
 }
 
+
 Q2a:
 public static int getPeakIndex(int[] array){
 
@@ -64,10 +65,44 @@ private double computeTemp(int row, int col){
 }
 
 Q3b:
-public boolean updateAllTemps(double tolerace){
+public boolean updateAllTemps(double tolerance){
+	boolean isWithin = true;
     for(int i=0; i<temps.length; i++){
         for(int j=0; j<temps[0].length; j++){
-            
+			double newTemp = computeTemp(temps[i][j]);
+			if(Math.abs(temps[i][j] - newTemp) > tolerance){
+				isWithin = false;
+			}
+			temps[i][j] = newTemp;
         }
     }
+	return isWithin;
 }
+
+Q4a:
+public boolean record(int score){
+	for(ScoreInfo score: scoreList){
+		if(score.getScore() == score){
+			score.increment();
+			return false;
+		}
+	}
+	ScoreInfo scoreInfo = new ScoreInfo(score);
+	for(int i=0;i<scoreList.size(); i++){
+		if(scoreInfo.getScore() < scoreList.get(i).getScore()){
+			scoreList.add(i, scoreInfo);
+			return true;
+		}
+	}
+	
+	return true;
+}
+
+Q4b:
+public void recordScores(int[] stuScores){
+	for(int score: stuScores){
+		record(score);
+	}
+}
+
+
