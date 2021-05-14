@@ -20,7 +20,7 @@ public class test {
             System.out.println("Fish Contstructed");
         }
 
-        public void swim(){
+        static void swim(){
 
         }
     }
