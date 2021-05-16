@@ -2,13 +2,22 @@ package com.application.frq.Nathan;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RefTest {
 
     static class Dog{
         private String name;
 
+        HashMap<String, String> hm;
+
+        public Dog(){
+            hm = new HashMap<>();
+            hm.hashCode();
+        }
+
         public String getName() {
+
             return name;
         }
 
@@ -22,7 +31,6 @@ public class RefTest {
     public static void main(String[] args) {
 
         System.out.println(po("FAMILY"));
-
         Dog dm = new Dog();
         dm.setName("little dog");
         System.out.println(dm.getName());
