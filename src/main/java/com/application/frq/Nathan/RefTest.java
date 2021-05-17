@@ -2,6 +2,7 @@ package com.application.frq.Nathan;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class RefTest {
@@ -14,10 +15,11 @@ public class RefTest {
         public Dog(){
             hm = new HashMap<>();
             hm.hashCode();
+
+            name = "troy";
         }
 
         public String getName() {
-
             return name;
         }
 
@@ -25,10 +27,26 @@ public class RefTest {
             this.name = name;
         }
 
-        public static void fo(){}
+        @Override
+        public String toString() {
+            return "Dog{" +
+                    "name='" + name + '\'' +
+                    '}';
+        }
+    }
+
+    static void setNull(Dog[] dogs){
+        dogs[0].setName("max");
     }
 
     public static void main(String[] args) {
+
+        Dog[] dogs = new Dog[]{new Dog(), new Dog(), new Dog()};
+        System.out.println(Arrays.toString(dogs));
+        dogs[2] = null;
+        System.out.println(Arrays.toString(dogs));
+        setNull(dogs);
+        System.out.println(Arrays.toString(dogs));
 
         System.out.println(po("FAMILY"));
         Dog dm = new Dog();
@@ -40,10 +58,10 @@ public class RefTest {
         System.out.println(dm.getName());
 
 
-        ArrayList<Dog> dogs = new ArrayList<>();
-        System.out.println(dogs);
-        fooList(dogs);
-        System.out.println(dogs);
+        ArrayList<Dog> dogies = new ArrayList<>();
+        System.out.println(dogies);
+        fooList(dogies);
+        System.out.println(dogies);
 
     }
 
