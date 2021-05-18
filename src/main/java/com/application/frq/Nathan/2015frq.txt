@@ -12,7 +12,7 @@ part 1B:
 public static int[] rowSums(int[][] arr2D){
 	
 	int rows = new int[arr2D.length];
-	for(int i=0;i<arr2D/length; i++){
+	for(int i=0;i<arr2D.length; i++){
 		rows[i] = arraySum(arr2D[i]);
 	}
 	return rows;
@@ -20,7 +20,7 @@ public static int[] rowSums(int[][] arr2D){
 
 part 1C:
 public static boolean isDiverse(int[][] arr2D){
-	int rows = rowSums(arr2D);
+	int[] rows = rowSums(arr2D);
 	boolean diverse = true;
 	for(int i=0;i<rows.length;i++){
 		for(int j=i+1;j<rows.length;j++){

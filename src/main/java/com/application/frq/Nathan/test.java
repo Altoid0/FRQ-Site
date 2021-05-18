@@ -41,6 +41,10 @@ public class test {
             System.out.println("SHARK Contstructed");
         }
 
+        public int swim(int m) {
+            return 1;
+        }
+
         public void chomp(){
              swim();
         }
