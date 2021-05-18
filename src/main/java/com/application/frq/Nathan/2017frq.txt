@@ -1,8 +1,10 @@
-frq here
-scoring here
+https://apcentral.collegeboard.org/pdf/ap-computer-science-a-frq-2017.pdf
+https://secure-media.collegeboard.org/ap/pdf/ap17-sg-comp-sci-a.pdf
 27min
 
 1A:
+-1, construct digitList
+4/5
 public Digits(int num){
 
 	if(num == 0){
@@ -16,6 +18,7 @@ public Digits(int num){
 	}
 }
 
+4/4
 1B:
 public boolean isStrictlyIncreasing(){
 	for(int i=1; i<digitList.size(); i++){
@@ -26,6 +29,7 @@ public boolean isStrictlyIncreasing(){
 	return true;
 }
 
+5/5
 3A:
 public void replaceNthOccurence(String str, int n, String repl){
 	int index = findNthOccurence(str, n);
@@ -33,6 +37,7 @@ public void replaceNthOccurence(String str, int n, String repl){
 	currentPhrase = currentPhrase.substring(0, index) + str + currentPhrase.substring(index+str.length());
 }
 
+4/4
 3B:
 public int findLastOccurence(String str){
 	int occurence = 0;
@@ -44,6 +49,7 @@ public int findLastOccurence(String str){
 	return index;
 }
 
+5/5
 4A:
 public static Position findPosition(int num, int[][] intArr){
 	for(int r=0; r<intArr.length; r++){
@@ -56,6 +62,7 @@ public static Position findPosition(int num, int[][] intArr){
 	return null;
 }
 
+4/4
 4B:
 public static Position[][] getSuccessorArray(int[][] intArr){
 	Position[][] positions = new Position[intArr.length][intArr[0].length];
